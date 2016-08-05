@@ -1,0 +1,160 @@
+/*
+* Skeleton V1.2
+* Copyright 2011, Dave Gamache
+* www.getskeleton.com
+* Free to use under the MIT license.
+* http://www.opensource.org/licenses/mit-license.php
+* 6/20/2012
+*/
+
+/* Table of Content
+==================================================
+	#Site Styles
+	#Page Styles
+	#Media Queries
+	#Font-Face */
+
+/* #Site Styles
+================================================== */
+
+body {
+	background-color: white;
+}
+
+.header {
+	margin-top: 15px;
+	margin-bottom: 20px;
+	font-size: 38px;
+	font-weight: bold;
+	font-family: Courier New;
+	color: black;
+}
+
+h1 {
+	font-size: 28px;
+	font-weight: bold;
+	font-family: Arial Black;
+	color: #222;
+}
+
+h2 {
+	font-size: 24px;
+	font-weight: bold;
+	font-family: Arial Black;
+	color: #111;
+}
+
+h3 {
+	font-size: 20px;
+	font-weight: bold;
+	font-family: Arial Black;
+	color: #000;
+}
+
+p {
+	display: block;
+	font-size: 16px;
+	font-family: Times New Roman;
+	color: #111;
+}
+
+img {
+	max-width: 100%;
+}
+
+blockquote {	
+	font-style: italic;
+}
+
+sup {
+	font-size: 12px;
+	vertical-align: super;
+}
+
+code {
+	display: block;
+	white-space: pre-wrap;
+	font-size: 14px;
+	font-family: Courier New;
+
+	padding-left: 15px;
+	padding-right: 5px;
+	padding-top: 2px;
+	padding-bottom: 2px;
+	
+	border-left: 5px;
+	border-left-style: solid;
+	border-left-color: #00FF44;
+	
+	margin-top: 20px;
+	margin-bottom: 20px;
+	margin-left: 30px;
+}
+
+a:link, a:visited {
+	color: #0033AA;
+	text-decoration: none;
+}
+
+a:hover, a:active {
+	color: #0033DD;
+	text-decoration: underline;
+}
+
+#navBar {
+	font-size: 20px;
+	/*font-weight: bold;
+	font-family: Courier New;*/
+	font-family: ‘Palatino Linotype’, ‘Book Antiqua’, Palatino, serif;
+}
+
+#navBar a:hover, a:active {
+	color: #0033FF;
+	text-decoration: none;
+}
+
+/* Admonitions */
+.note {
+	margin-top: 20px;
+	margin-bottom: 20px;
+	margin-left: 30px;
+}
+
+.warning {
+	margin-top: 20px;
+	margin-bottom: 20px;
+	margin-left: 30px;
+}
+
+.important {
+	margin-top: 20px;
+	margin-bottom: 20px;
+	margin-left: 30px;
+}
+
+.tip {
+	margin-top: 20px;
+	margin-bottom: 20px;
+	margin-left: 30px;
+}
+
+/* #Page Styles
+================================================== */
+
+/* #Media Queries
+================================================== */
+
+	/* Smaller than standard 960 (devices and browsers) */
+	@media only screen and (max-width: 959px) {}
+
+	/* Tablet Portrait size to standard 960 (devices and browsers) */
+	@media only screen and (min-width: 768px) and (max-width: 959px) {}
+
+	/* All Mobile Sizes (devices and browser) */
+	@media only screen and (max-width: 767px) {}
+
+	/* Mobile Landscape Size to Tablet Portrait (devices and browsers) */
+	@media only screen and (min-width: 480px) and (max-width: 767px) {}
+
+	/* Mobile Portrait Size to Mobile Landscape Size (devices and browsers) */
+	@media only screen and (max-width: 479px) {}

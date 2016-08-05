@@ -1,0 +1,45 @@
+---
+layout: default
+permalink: /photos
+images:
+  - image_path: ../images/photos/bridge.jpg
+    title: Bridge
+  - image_path: ../images/photos/duck.jpg
+    title: Duck
+  - image_path: ../images/photos/garden_of_the_gods.jpg
+    title: Garden of the Gods - Colorado
+  - image_path: ../images/photos/grass2.jpg
+    title: Grass
+  - image_path: ../images/photos/grass.jpg
+    title: Grass
+  - image_path: ../images/photos/hanauma.jpg
+    title: Hanauma Bay
+  - image_path: ../images/photos/ice.jpg
+    title: Ice
+  - image_path: ../images/photos/lake.jpg
+    title: Lake
+  - image_path: ../images/photos/lakesunset.jpg
+    title: Minnesota Sunset
+  - image_path: ../images/photos/leaves2.jpg
+    title: Leaves
+  - image_path: ../images/photos/leaves.jpg
+    title: Leaves
+  - image_path: ../images/photos/loon.jpg
+    title: Loon
+  - image_path: ../images/photos/rainier.jpg
+    title: Mount Rainier
+  - image_path: ../images/photos/river.jpg
+    title: River - Whitewater State Park
+  - image_path: ../images/photos/sunset.jpg
+    title: Minnesota Sunset
+  - image_path: ../images/photos/tree.jpg
+    title: Tree
+  - image_path: ../images/photos/turtles.jpg
+    title: Turtles
+---
+
+<h1>Photos</h1>
+
+{% for image in page.images %}
+<a href="{{ image.image_path }}"><img src="{{ image.image_path }}" alt="{{ image.title }}" /></a>
+{% endfor %}
