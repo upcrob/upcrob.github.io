@@ -7,9 +7,9 @@ permalink: /why-redis-is-awesome
 
 <!-- 2/20/2014 -->
 
-I like to complain about things - it's one of those pastimes that, unlike sailing and golf, requires neither strong skill nor financial backing [1].  This may be what makes this article so personally unique: I have nearly nothing bad to say about Redis.
+I like to complain about things - it's one of those pastimes that, unlike sailing and golf, requires neither strong skill nor financial backing [^1].  This may be what makes this article so personally unique: I have nearly nothing bad to say about Redis.
 
-[1] It should be noted that I possess neither of these things.
+[^1]: It should be noted that I possess neither of these things.
 
 ## What is it?
 
