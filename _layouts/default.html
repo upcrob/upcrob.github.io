@@ -41,9 +41,31 @@
 		  ga('send', 'pageview');
 		</script>
 
+		<script>
+			<!-- Callout macros -->
+			function formatCallouts() {
+				var tags = document.getElementsByTagName('p');
+				for (var i = 0; i < tags.length; i++) {
+					if (tags[i].innerHTML.startsWith('NOTE:')) {
+						tags[i].className = 'note';
+						tags[i].innerHTML = tags[i].innerHTML.replace('NOTE:', '<i class="fa fa-info-circle fa-3x" style="color: #1111BB; margin-right: 15px;"></i>');
+					} else if (tags[i].innerHTML.startsWith('WARNING:')) {
+						tags[i].className = 'warning';
+						tags[i].innerHTML = tags[i].innerHTML.replace('WARNING:', '<i class="fa fa-exclamation-triangle fa-3x" style="color: #BB1111; margin-right: 15px;"></i>');
+					} else if (tags[i].innerHTML.startsWith('IMPORTANT:')) {
+						tags[i].className = 'warning';
+						tags[i].innerHTML = tags[i].innerHTML.replace('IMPORTANT:', '<i class="fa fa-exclamation-circle fa-3x" style="color: #BB1111; margin-right: 15px;"></i>');
+					} else if (tags[i].innerHTML.startsWith('TIP:')) {
+						tags[i].className = 'tip';
+						tags[i].innerHTML = tags[i].innerHTML.replace('TIP:', '<i class="fa fa-lightbulb-o fa-3x" style="color: #248F24; margin-right: 15px;"></i>');
+					}
+				}
+			}
+		</script>
+
 		<!-- End Google Analytics -->
 	</head>
-	<body>
+	<body onload="formatCallouts()">
 		<!-- Primary Page Layout
 		================================================== -->
 
