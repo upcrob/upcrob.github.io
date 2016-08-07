@@ -36,3 +36,5 @@ One can describe Redis in many ways, but 'slow' is not among the list of availab
 ## 5. It Supports the Observer Pattern
 
 Redis is primarily a key-value store, so its main focus is on CRUD operations.  This does not by any means imply that its a one-trick pony.  Redis has built-in publish-subscribe support that allows clients to 'watch' data stored in the system and respond to changes.  If you wanted, you could even use it as a simple message queue.
+
+---
