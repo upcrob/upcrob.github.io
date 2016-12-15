@@ -5,6 +5,8 @@ permalink: /jotp-tutorial
 
 # OWASP jOTP Demo
 
+IMPORTANT: These instructions are only applicable for 1.x versions of jOTP.  Later major versions use a different API and are configured differently.
+
 <!-- 3/20/2014 -->
 
 OWASP jOTP is a one-time-use password token service.  For an overview of this application, see the [OWASP jOTP Overview](jotp-overview).  Below is a quick walkthrough for setting up jOTP and a sample app that uses it as part of its authentication backend.

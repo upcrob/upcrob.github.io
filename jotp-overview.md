@@ -5,6 +5,8 @@ permalink: /jotp-overview
 
 # OWASP jOTP Overview
 
+IMPORTANT: These instructions are only applicable for 1.x versions of jOTP.  Later major versions use a different API and are configured differently.
+
 <!-- 3/20/2014 -->
 
 ## What is OWASP jOTP?
