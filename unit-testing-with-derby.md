@@ -1,6 +1,6 @@
 ---
 layout: default
-permalink: /unit-testing-with-derby
+permalink: /unit-testing-with-derby/
 ---
 
 # Using Derby as an In-Memory Data Source

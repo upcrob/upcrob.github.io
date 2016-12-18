@@ -1,6 +1,6 @@
 ---
 layout: default
-permalink: /persistence-of-php
+permalink: /persistence-of-php/
 ---
 
 # The Persistance of PHP: Why I Can't Help But Love It

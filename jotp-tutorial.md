@@ -1,6 +1,6 @@
 ---
 layout: default
-permalink: /jotp-tutorial
+permalink: /jotp-tutorial/
 ---
 
 # OWASP jOTP Demo

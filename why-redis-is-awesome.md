@@ -1,6 +1,6 @@
 ---
 layout: default
-permalink: /why-redis-is-awesome
+permalink: /why-redis-is-awesome/
 ---
 
 # Why Redis is Awesome

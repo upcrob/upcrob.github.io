@@ -1,6 +1,6 @@
 ---
 layout: default
-permalink: /install-bison-mac
+permalink: /install-bison-mac/
 ---
 
 # Installing Bison (Yacc) on a Mac

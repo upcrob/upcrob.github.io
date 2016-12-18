@@ -1,6 +1,6 @@
 ---
 layout: default
-permalink: /projects
+permalink: /projects/
 ---
 
 # Projects
@@ -13,7 +13,7 @@ Listed below are some of the projects that I have either been involved with or a
 
 ## jOTP
 
-[jOTP](jotp-overview) is a lightweight web application, implemented as a set of RESTful services, for generating and validating one-time passwords as a secondary factor of authentication.  This allows web applications to validate that users are who they say they are not only based on what they know (ie. their passwords), but also by something that they have (access to a particular cell phone or email account).
+[jOTP](/jotp-overview) is a lightweight web application, implemented as a set of RESTful services, for generating and validating one-time passwords as a secondary factor of authentication.  This allows web applications to validate that users are who they say they are not only based on what they know (ie. their passwords), but also by something that they have (access to a particular cell phone or email account).
 
 ## U Programming Language & Compiler
 

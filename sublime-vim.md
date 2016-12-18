@@ -1,6 +1,6 @@
 ---
 layout: default
-permalink: /sublime-vim
+permalink: /sublime-vim/
 ---
 
 # Give Vim a Sublime Facelift

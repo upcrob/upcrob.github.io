@@ -1,6 +1,6 @@
 ---
 layout: default
-permalink: /jotp-overview
+permalink: /jotp-overview/
 ---
 
 # OWASP jOTP Overview

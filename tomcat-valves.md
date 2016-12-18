@@ -1,6 +1,6 @@
 ---
 layout: default
-permalink: /tomcat-valves
+permalink: /tomcat-valves/
 ---
 
 # Writing a Custom Error Report Valve for Tomcat
