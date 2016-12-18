@@ -2,52 +2,52 @@
 layout: default
 permalink: /photos/
 images:
-  - image_path: ../images/photos/bridge.jpg
+  - image_base: ../images/photos/bridge
     title: Bridge
-  - image_path: ../images/photos/duck.jpg
+  - image_base: ../images/photos/duck
     title: Duck
-  - image_path: ../images/photos/garden_of_the_gods.jpg
+  - image_base: ../images/photos/garden_of_the_gods
     title: Garden of the Gods - Colorado
-  - image_path: ../images/photos/grass2.jpg
+  - image_base: ../images/photos/grass2
     title: Grass
-  - image_path: ../images/photos/grass.jpg
+  - image_base: ../images/photos/grass
     title: Grass
-  - image_path: ../images/photos/hanauma.jpg
+  - image_base: ../images/photos/hanauma
     title: Hanauma Bay
-  - image_path: ../images/photos/ice.jpg
+  - image_base: ../images/photos/ice
     title: Ice
-  - image_path: ../images/photos/lake.jpg
+  - image_base: ../images/photos/lake
     title: Lake
-  - image_path: ../images/photos/lakesunset.jpg
+  - image_base: ../images/photos/lakesunset
     title: Minnesota Sunset
-  - image_path: ../images/photos/leaves2.jpg
+  - image_base: ../images/photos/leaves2
     title: Leaves
-  - image_path: ../images/photos/leaves.jpg
+  - image_base: ../images/photos/leaves
     title: Leaves
-  - image_path: ../images/photos/loon.jpg
+  - image_base: ../images/photos/loon
     title: Loon
-  - image_path: ../images/photos/rainier.jpg
+  - image_base: ../images/photos/rainier
     title: Mount Rainier
-  - image_path: ../images/photos/river.jpg
+  - image_base: ../images/photos/river
     title: River - Whitewater State Park
-  - image_path: ../images/photos/sunset.jpg
+  - image_base: ../images/photos/sunset
     title: Minnesota Sunset
-  - image_path: ../images/photos/tree.jpg
+  - image_base: ../images/photos/tree
     title: Tree
-  - image_path: ../images/photos/turtles.jpg
+  - image_base: ../images/photos/turtles
     title: Turtles
-  - image_path: ../images/photos/ducks.jpg
+  - image_base: ../images/photos/ducks
     title: Pair of Ducks
-  - image_path: ../images/photos/muskrat.jpg
+  - image_base: ../images/photos/muskrat
     title: Muskrat
-  - image_path: ../images/photos/bridge2.jpg
+  - image_base: ../images/photos/bridge2
     title: Bridge
-  - image_path: ../images/photos/tallgrass.jpg
+  - image_base: ../images/photos/tallgrass
     title: Tall Grass
 ---
 
 <h1>Photos</h1>
 
 {% for image in page.images %}
-<a href="{{ image.image_path }}"><img src="{{ image.image_path }}" alt="{{ image.title }}" /></a>
+<a href="{{ image.image_base }}.jpg"><img src="{{ image.image_base }}_thumb.jpg" alt="{{ image.title }}" /></a>
 {% endfor %}
