@@ -8,7 +8,7 @@ permalink: /blog/
 > "Never before have so many people, with so little to say, said so much, to so few."
 > | [despair.com](http://www.despair.com/blogging.html)
 
-* [Installing GNU Bison on a Mac](/install-bison-mac.html)
+* [Installing GNU Bison on a Mac](/install-bison-mac)
 * [Unit Testing with Derby](/unit-testing-with-derby)
 * [Give Vim a Sublime Facelift](/sublime-vim)
 * [OWASP jOTP Tutorial](/jotp-tutorial)
