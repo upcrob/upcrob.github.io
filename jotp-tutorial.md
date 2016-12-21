@@ -85,21 +85,21 @@ TIP: Explore the code and comments in **ControllerServlet.java**.  While the cod
 
 First, the point your browser at the application's welcome page.  For me, this is "http://localhost:8080/jOTPExample/Controller".
 
-![Login page](images/jotp-tutorial/login.png)
+![Login page](../images/jotp-tutorial/login.png)
 
 Enter the example user's name.  In this case, it's "testuser".  Once the "Generate Token" button is pressed, the application will request a token for "testuser" be sent via text message by jOTP.
 
-![Login page with username](images/jotp-tutorial/login-username.png)
+![Login page with username](../images/jotp-tutorial/login-username.png)
 
 The following page will prompt you to enter the password ("testpassword"), as well as the token from jOTP.  Once this token is received, it can be entered in the web form.
 
-![OTP token from jOTP on cell-phone](images/jotp-tutorial/token-msg.png)
+![OTP token from jOTP on cell-phone](../images/jotp-tutorial/token-msg.png)
 
-![Login page prompting for OTP token](images/jotp-tutorial/username-password-token.png)
+![Login page prompting for OTP token](../images/jotp-tutorial/username-password-token.png)
 
 Assuming the time elapsed between when the token was generated and when it was entered into the second login form hasn't exceeded the maximum time in the jOTP configuration, the you will be logged in successfully.
 
-![Secured page](images/jotp-tutorial/secured.png)
+![Secured page](../images/jotp-tutorial/secured.png)
 
 If the token was invalid (entered incorrectly or expired), the you will reach the invalid credentials page:
-![Login failed](images/jotp-tutorial/login-failed.png)
+![Login failed](../images/jotp-tutorial/login-failed.png)

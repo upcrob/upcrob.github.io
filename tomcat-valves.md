@@ -9,7 +9,7 @@ permalink: /tomcat-valves/
 
 If you've developed (or used a web application running) on a Java-based server before, you've probably seen something like this:
 
-![Error Page](images/tomcat-valves/default-output.png)
+![Error Page](../images/tomcat-valves/default-output.png)
 
 This can happen for a number of reasons ranging from a misconfigured server to a bug in an application.  While we developers like to think we can offer a "bug-free guarantee", this frequently isn't the case.  Usually, these error pages contain harmless information that's just a cryptic annoyance to end users.  Sometimes, however, the stacktraces contained in them can leak information that can be used to by attackers to pin-point weaknesses in applications and infrastructure.  For this reason, it's useful to be able to override the default error page.  
 
@@ -75,8 +75,8 @@ IMPORTANT: Because the changes in steps 2 and 3 occur at the server level, Tomca
 
 Start the server and navigate to an app that throws (but doesn't catch) a **RuntimeException**.  Instead of seeing the error at the beginning of this article in the browser, the user should see something like this:
 
-![Friendly Page](images/tomcat-valves/nice-output.png)
+![Friendly Page](../images/tomcat-valves/nice-output.png)
 
 Finally, something like this should show up in the logs:
 
-![Log Output](images/tomcat-valves/log-message.png)
+![Log Output](../images/tomcat-valves/log-message.png)

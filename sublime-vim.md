@@ -41,8 +41,8 @@ Add the following lines to your **.vimrc** file.  Note that this subset doesn't 
 
 If all goes well, source files opened with Vim from the terminal should look very Sublime Text-esque:
 
-![Source Code](images/sublime-vim/source.png)
+![Source Code](../images/sublime-vim/source.png)
 
 And with the **ctrlp** plugin, finding files in and under your current directory is a snap:
 
-![Fuzzy Find](images/sublime-vim/fuzzy.png)
+![Fuzzy Find](../images/sublime-vim/fuzzy.png)
