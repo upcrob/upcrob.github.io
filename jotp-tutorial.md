@@ -15,7 +15,7 @@ OWASP jOTP is a one-time-use password token service.  For an overview of this ap
 
 * A local installation of [Apache Tomcat](http://tomcat.apache.org).  You will need to have a working knowledge of how to install WAR files and start/stop applications on the server.
 * The [jOTP source code](https://github.com/upcrob/jOTP).
-* The source code for the [example application](files/jotp-example/jOTPExample.zip).
+* The source code for the [example application](../files/jotp-example/jOTPExample.zip).
 
 ## Setting up jOTP
 

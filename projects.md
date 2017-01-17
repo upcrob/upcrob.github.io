@@ -30,5 +30,5 @@ One of my interests in the field of computer science is programming language and
 
 When I was an undergraduate student, I completed a senior project that involved creating a simple chess program. I originally wrote the program to run on a personal computer, and later parallelized it to run on the Math and Computer Science department's supercomputing cluster using MPI.  While my implementation is certainly not the most clever or cleanly coded (I would make a number of different design choices were I to rewrite the program from scratch), it was definitely a good experience to have.  I've included the source code and my (very brief) technical report for anyone who may happen to be interested in the topic.
 
-* [Overview](files/projects/ChessPaper.pdf)
+* [Overview](../files/projects/ChessPaper.pdf)
 * [Source Code](https://github.com/upcrob/garry)
