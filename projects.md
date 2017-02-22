@@ -9,13 +9,13 @@ Listed below are some of the projects that I have either been involved with or a
 
 ## fsq
 
-[![Download](https://api.bintray.com/packages/upcrob/generic/fsq/images/download.svg)](https://bintray.com/upcrob/generic/fsq/_latestVersion)
+[![Download](https://api.bintray.com/packages/upcrob/generic/fsq/images/download.svg)](https://bintray.com/upcrob/generic/fsq/_latestVersion#files)
 
 [fsq](https://github.com/upcrob/fsq) is a small, simple utility for querying the file system.  I have frequently needed to find files that match a certain set of critera (e.g. size has to be 100 kilobytes, filename endswith '.java', the file contains a certain set of keywords, etc).  While this can be done to some extent with existing *nix tools or by writing a script, looking up the specific flags or even writing a quick script can be a pain, especially when optimization comes into play (e.g. don't read the file if you don't have to).  The fsq utility (as seen on TV) does all of this and more with a small SQL-like language.  Plus I'm a bit of a parser nut, so it gives me an outlet for that.
 
 ## jOTP
 
-[![Download](https://api.bintray.com/packages/upcrob/generic/jOTP/images/download.svg)](https://bintray.com/upcrob/generic/jOTP/_latestVersion)
+[![Download](https://api.bintray.com/packages/upcrob/generic/jOTP/images/download.svg)](https://bintray.com/upcrob/generic/jOTP/_latestVersion#files)
 
 [jOTP](https://www.owasp.org/index.php/OWASP_JOTP_Project) is a lightweight web application, implemented as a set of RESTful services, for generating and validating one-time passwords as a secondary factor of authentication.  This allows web applications to validate that users are who they say they are not only based on what they know (ie. their passwords), but also by something that they have (access to a particular cell phone or email account).
 
