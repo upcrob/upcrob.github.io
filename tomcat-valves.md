@@ -19,22 +19,23 @@ In Tomcat, this can be done by creating a custom **Valve**.  In a nutshell, valv
 
 The first thing we'll need to do is write our replacement valve.  While you can do this entirely from scratch, it's easiest just to override the **report()** method in built-in **ErrorReportValve** class:
 
+```
 	package com.upcrob.example.valves;
 
 	import java.io.BufferedWriter;
 	import java.io.IOException;
 	import java.io.OutputStreamWriter;
 	import java.util.logging.Logger;
-	
+
 	import org.apache.catalina.connector.Request;
 	import org.apache.catalina.connector.Response;
 	import org.apache.catalina.valves.ErrorReportValve;
-	
+
 	public class CustomErrorReportValve extends ErrorReportValve {
-	
+
 		// Create a simple logger
 		Logger log = Logger.getLogger(CustomErrorReportValve.class.getName());
-		
+
 		@Override
 		protected void report(Request request, Response response, Throwable t) {
 			try {
@@ -46,7 +47,7 @@ The first thing we'll need to do is write our replacement valve.  While you can 
 				out.write("<p>Don't worry though, we're working on it.</p>");
 				out.write("</body></html>");
 				out.close();
-				
+
 				// Log the error with your favorite logging framework...
 				log.severe("Uncaught throwable was thrown: " + t.getMessage());
 			} catch (IOException e) {
@@ -54,6 +55,7 @@ The first thing we'll need to do is write our replacement valve.  While you can 
 			}
 		}
 	}
+```
 
 By overriding **report()**, we can modify what Tomcat writes out to the end user's browser.  In this case, we'll just write out a simple "oops" page.  This can be as simple or as complex as you would like.
 
@@ -68,9 +70,9 @@ Once we've written the **CustomErrorReportValve**, it will need to be deployed t
 After the CustomErrorReportValve JAR has been placed on the server, Tomcat will need to be told to use it instead of the default class.  This can be done by updating the **<Host>** element in Tomcat's **server.xml** file:
 
 	<Host errorReportValveClass="com.upcrob.example.valves.CustomErrorReportValve" . . . />
-	
+
 IMPORTANT: Because the changes in steps 2 and 3 occur at the server level, Tomcat will need to be restarted whenever a change is made to the valve JAR or **server.xml**.
-	
+
 ## 4. Watch the Magic Happen
 
 Start the server and navigate to an app that throws (but doesn't catch) a **RuntimeException**.  Instead of seeing the error at the beginning of this article in the browser, the user should see something like this:
