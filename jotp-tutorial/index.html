@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+	<!--[if lt IE 7 ]><html class="ie ie6" lang="en"> <![endif]-->
+	<!--[if IE 7 ]><html class="ie ie7" lang="en"> <![endif]-->
+	<!--[if IE 8 ]><html class="ie ie8" lang="en"> <![endif]-->
+	<!--[if (gte IE 9)|!(IE)]><!--><html lang="en"> <!--<![endif]-->
+	<head>
+
+		<!-- Basic Page Needs ================================================== -->
+		<meta charset="utf-8">
+		<title></title>
+		<meta name="description" content="">
+		<meta name="author" content="">
+
+		<!-- Mobile Specific Metas ================================================== -->
+		<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+		<!-- CSS ================================================== -->
+		<link rel="stylesheet" href="../css/base.css">
+		<link rel="stylesheet" href="../css/skeleton.css">
+		<link rel="stylesheet" href="../css/layout.css">
+		<link href="../css/font-awesome/css/font-awesome.min.css" rel="stylesheet">
+
+		<!--[if lt IE 9]>
+			<script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+		<![endif]-->
+
+		<!-- Favicons ================================================== -->
+		<link rel="shortcut icon" href="../images/favicon.ico">
+		<link rel="apple-touch-icon" href="../images/apple-touch-icon.png">
+		<link rel="apple-touch-icon" sizes="72x72" href="../images/apple-touch-icon-72x72.png">
+		<link rel="apple-touch-icon" sizes="114x114" href="../images/apple-touch-icon-114x114.png">
+		
+		<!-- Google Analytics -->
+		<script>
+		  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+		  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+		  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+		  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+		  ga('create', 'UA-52637858-1', 'auto');
+		  ga('send', 'pageview');
+		</script>
+
+		<script>
+			<!-- Callout macros -->
+			function formatCallouts() {
+				var tags = document.getElementsByTagName('p');
+				for (var i = 0; i < tags.length; i++) {
+					if (tags[i].innerHTML.startsWith('NOTE:')) {
+						tags[i].className = 'note';
+						tags[i].innerHTML = tags[i].innerHTML.replace('NOTE:', '<i class="fa fa-info-circle fa-3x" style="color: #1111BB; margin-right: 15px;"></i>');
+					} else if (tags[i].innerHTML.startsWith('WARNING:')) {
+						tags[i].className = 'warning';
+						tags[i].innerHTML = tags[i].innerHTML.replace('WARNING:', '<i class="fa fa-exclamation-triangle fa-3x" style="color: #BB1111; margin-right: 15px;"></i>');
+					} else if (tags[i].innerHTML.startsWith('IMPORTANT:')) {
+						tags[i].className = 'warning';
+						tags[i].innerHTML = tags[i].innerHTML.replace('IMPORTANT:', '<i class="fa fa-exclamation-circle fa-3x" style="color: #BB1111; margin-right: 15px;"></i>');
+					} else if (tags[i].innerHTML.startsWith('TIP:')) {
+						tags[i].className = 'tip';
+						tags[i].innerHTML = tags[i].innerHTML.replace('TIP:', '<i class="fa fa-lightbulb-o fa-3x" style="color: #248F24; margin-right: 15px;"></i>');
+					}
+				}
+			}
+		</script>
+
+		<!-- End Google Analytics -->
+	</head>
+	<body onload="formatCallouts()">
+		<!-- Primary Page Layout
+		================================================== -->
+
+		<div class="container">
+			<div class="twelve columns">
+				<div class="header">RobUpcraft(.com)</div>
+			</div>
+			<div class="four columns">
+				<span style="margin-left: 10px;">
+					<a href="http://www.github.com/upcrob">
+						<i class="fa fa-github fa-2x"></i>
+					</a>
+				</span>
+				<span style="margin-left: 10px;">
+					<a href="http://www.linkedin.com/pub/rob-upcraft/27/67b/18a/">
+						<i class="fa fa-linkedin fa-2x"></i>
+					</a>
+				</span>
+			</div>
+			
+			<div id="navBar" class="sixteen columns">
+				<!-- Links -->
+				<a href="/">Home</a> |
+				<a href="/projects">Projects</a> |
+				<a href="/blog">(b)log</a> |
+				<a href="/photos">Photos</a>
+			</div>
+
+			<div class="sixteen columns">
+				<h1 id="owasp-jotp-demo">OWASP jOTP Demo</h1>
+
+<p>IMPORTANT: These instructions are only applicable for 1.x versions of jOTP.  Later major versions use a different API and are configured differently.</p>
+
+<!-- 3/20/2014 -->
+
+<p>OWASP jOTP is a one-time-use password token service.  For an overview of this application, see the <a href="jotp-overview">OWASP jOTP Overview</a>.  Below is a quick walkthrough for setting up jOTP and a sample app that uses it as part of its authentication backend.</p>
+
+<h2 id="what-you-will-need">What You Will Need</h2>
+
+<ul>
+  <li>A local installation of <a href="http://tomcat.apache.org">Apache Tomcat</a>.  You will need to have a working knowledge of how to install WAR files and start/stop applications on the server.</li>
+  <li>The <a href="https://github.com/upcrob/jOTP">jOTP source code</a>.</li>
+  <li>The source code for the <a href="../files/jotp-example/jOTPExample.zip">example application</a>.</li>
+</ul>
+
+<h2 id="setting-up-jotp">Setting up jOTP</h2>
+
+<p>Grab the jOTP code from GitHub.  You can do this by either downloading the ZIP file or by cloning the repository.  Once you have unpacked the code locally, build the WAR file by running the gradlew command in the source folder:</p>
+
+<p>On Linux/UNIX/Mac:</p>
+
+<pre><code>./gradlew build
+</code></pre>
+
+<p>On Windows:</p>
+
+<pre><code>gradlew build
+</code></pre>
+
+<p>Gradle will build the WAR and place it in the <strong>build/lib</strong> folder.</p>
+
+<p>Before starting the jOTP application, it will need to be configured.  To do this, create a file called, <strong>config.yaml</strong> and place it in a folder called, <strong>.jotp</strong> in your home folder.  Copy the following configuration into the file, substituting your own EMAIL ADDRESS, EMAIL USERNAME, and EMAIL PASSWORD.  This configuration will tell jOTP how to treat incoming requests for tokens, and how to send them to recipients.  See the comments for details.</p>
+
+<pre><code># SMTP server settings
+# In this case, our app will just use a Gmail account
+SmtpHost: smtp.gmail.com
+SmtpPort: 587
+SmtpFrom: &lt;EMAIL ADDRESS&gt;
+
+# SMTP account settings
+SmtpAuthType: password
+SmtpUsername: &lt;EMAIL USERNAME - often the same as the EMAIL ADDRESS&gt;
+SmtpPassword: &lt;EMAIL PASSWORD&gt;
+
+# Use a local in-memory tokenstore
+TokenstoreType: local
+
+# Mobile providers to try when sending tokens
+# In this case, I'll assume that all recipients will be using either
+# AT&amp;T or Verizon
+MobileProviderHosts:
+  - vtext.com
+  - txt.att.net
+
+# We configure our application credentials here
+# In this case, our app will use username "mygroup" and password
+# "mypass".  The OTP tokens will be 5 characters in length and
+# tokens will expire 90 seconds after being generated.
+Clients:
+  - Name: mygroup
+    Password: mypass
+    MinOtpLength: 5
+    MaxOtpLength: 5
+    TokenLifetime: 90
+</code></pre>
+
+<p>Finally, install the jOTP WAR file you built earlier on your Tomcat instance.  Make sure you rename the WAR file to be “jOTP” to ensure that the context root is “jOTP” (this is what the test application is expecting.)  When you start the server, you should be able to access the <strong>/sys/monitor</strong> endpoint (eg. at <strong>http://localhost:8080/jOTP/sys/monitor</strong>) to verify that jOTP is running.  If it started successfully, you should see the following JSON response in your browser:</p>
+
+<pre><code>{"error":"", "status":"OK"}
+</code></pre>
+
+<h2 id="setting-up-the-example-application">Setting up the Example Application</h2>
+
+<p>Download the <a href="files/jotp-example/jOTPExample.zip">sample application code</a> and extract the ZIP file.  Find the <strong>ControllerServlet.java</strong> file and open it in a text editor.  Find the line where the phone number field is assigned and set this to your own cell phone number:</p>
+
+<pre><code>private static final String TEST_USER_PHONE_NUMBER = "&lt;PHONE NUMBER&gt;";
+</code></pre>
+
+<p>Once this has been updated, navigate to the root level of the project directory (ie. where the <strong>build.gradle</strong> file is.)  Build the WAR file by running the <strong>gradlew</strong> command.</p>
+
+<p>Install this WAR file on Tomcat.  If you see the welcome page when you navigate your browser to <strong>/jOTPExample/Controller</strong>, the app has been installed successfully.</p>
+
+<p>TIP: Explore the code and comments in <strong>ControllerServlet.java</strong>.  While the code is simple and not meant to be imitated by production applications, it will provide an overview of how web applications can interact with jOTP.</p>
+
+<h2 id="walking-through-the-example-application">Walking through the Example Application</h2>
+
+<p>First, the point your browser at the application’s welcome page.  For me, this is “http://localhost:8080/jOTPExample/Controller”.</p>
+
+<p><img src="../images/jotp-tutorial/login.png" alt="Login page" /></p>
+
+<p>Enter the example user’s name.  In this case, it’s “testuser”.  Once the “Generate Token” button is pressed, the application will request a token for “testuser” be sent via text message by jOTP.</p>
+
+<p><img src="../images/jotp-tutorial/login-username.png" alt="Login page with username" /></p>
+
+<p>The following page will prompt you to enter the password (“testpassword”), as well as the token from jOTP.  Once this token is received, it can be entered in the web form.</p>
+
+<p><img src="../images/jotp-tutorial/token-msg.png" alt="OTP token from jOTP on cell-phone" /></p>
+
+<p><img src="../images/jotp-tutorial/username-password-token.png" alt="Login page prompting for OTP token" /></p>
+
+<p>Assuming the time elapsed between when the token was generated and when it was entered into the second login form hasn’t exceeded the maximum time in the jOTP configuration, the you will be logged in successfully.</p>
+
+<p><img src="../images/jotp-tutorial/secured.png" alt="Secured page" /></p>
+
+<p>If the token was invalid (entered incorrectly or expired), the you will reach the invalid credentials page:
+<img src="../images/jotp-tutorial/login-failed.png" alt="Login failed" /></p>
+
+			</div>
+		</div>
+	</body>
+</html>

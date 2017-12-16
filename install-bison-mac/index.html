@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+	<!--[if lt IE 7 ]><html class="ie ie6" lang="en"> <![endif]-->
+	<!--[if IE 7 ]><html class="ie ie7" lang="en"> <![endif]-->
+	<!--[if IE 8 ]><html class="ie ie8" lang="en"> <![endif]-->
+	<!--[if (gte IE 9)|!(IE)]><!--><html lang="en"> <!--<![endif]-->
+	<head>
+
+		<!-- Basic Page Needs ================================================== -->
+		<meta charset="utf-8">
+		<title></title>
+		<meta name="description" content="">
+		<meta name="author" content="">
+
+		<!-- Mobile Specific Metas ================================================== -->
+		<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+		<!-- CSS ================================================== -->
+		<link rel="stylesheet" href="../css/base.css">
+		<link rel="stylesheet" href="../css/skeleton.css">
+		<link rel="stylesheet" href="../css/layout.css">
+		<link href="../css/font-awesome/css/font-awesome.min.css" rel="stylesheet">
+
+		<!--[if lt IE 9]>
+			<script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+		<![endif]-->
+
+		<!-- Favicons ================================================== -->
+		<link rel="shortcut icon" href="../images/favicon.ico">
+		<link rel="apple-touch-icon" href="../images/apple-touch-icon.png">
+		<link rel="apple-touch-icon" sizes="72x72" href="../images/apple-touch-icon-72x72.png">
+		<link rel="apple-touch-icon" sizes="114x114" href="../images/apple-touch-icon-114x114.png">
+		
+		<!-- Google Analytics -->
+		<script>
+		  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+		  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+		  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+		  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+		  ga('create', 'UA-52637858-1', 'auto');
+		  ga('send', 'pageview');
+		</script>
+
+		<script>
+			<!-- Callout macros -->
+			function formatCallouts() {
+				var tags = document.getElementsByTagName('p');
+				for (var i = 0; i < tags.length; i++) {
+					if (tags[i].innerHTML.startsWith('NOTE:')) {
+						tags[i].className = 'note';
+						tags[i].innerHTML = tags[i].innerHTML.replace('NOTE:', '<i class="fa fa-info-circle fa-3x" style="color: #1111BB; margin-right: 15px;"></i>');
+					} else if (tags[i].innerHTML.startsWith('WARNING:')) {
+						tags[i].className = 'warning';
+						tags[i].innerHTML = tags[i].innerHTML.replace('WARNING:', '<i class="fa fa-exclamation-triangle fa-3x" style="color: #BB1111; margin-right: 15px;"></i>');
+					} else if (tags[i].innerHTML.startsWith('IMPORTANT:')) {
+						tags[i].className = 'warning';
+						tags[i].innerHTML = tags[i].innerHTML.replace('IMPORTANT:', '<i class="fa fa-exclamation-circle fa-3x" style="color: #BB1111; margin-right: 15px;"></i>');
+					} else if (tags[i].innerHTML.startsWith('TIP:')) {
+						tags[i].className = 'tip';
+						tags[i].innerHTML = tags[i].innerHTML.replace('TIP:', '<i class="fa fa-lightbulb-o fa-3x" style="color: #248F24; margin-right: 15px;"></i>');
+					}
+				}
+			}
+		</script>
+
+		<!-- End Google Analytics -->
+	</head>
+	<body onload="formatCallouts()">
+		<!-- Primary Page Layout
+		================================================== -->
+
+		<div class="container">
+			<div class="twelve columns">
+				<div class="header">RobUpcraft(.com)</div>
+			</div>
+			<div class="four columns">
+				<span style="margin-left: 10px;">
+					<a href="http://www.github.com/upcrob">
+						<i class="fa fa-github fa-2x"></i>
+					</a>
+				</span>
+				<span style="margin-left: 10px;">
+					<a href="http://www.linkedin.com/pub/rob-upcraft/27/67b/18a/">
+						<i class="fa fa-linkedin fa-2x"></i>
+					</a>
+				</span>
+			</div>
+			
+			<div id="navBar" class="sixteen columns">
+				<!-- Links -->
+				<a href="/">Home</a> |
+				<a href="/projects">Projects</a> |
+				<a href="/blog">(b)log</a> |
+				<a href="/photos">Photos</a>
+			</div>
+
+			<div class="sixteen columns">
+				<h1 id="installing-bison-yacc-on-a-mac">Installing Bison (Yacc) on a Mac</h1>
+
+<!-- 11/21/2015 -->
+
+<p>By default, OS X comes with a <em>very</em> antiquated version of GNU Bison (2.3 on my machine).  I’ve had to install v3 on my machine twice now, so I figured it was something that should be documented - if for no other reason than to help Future Rob.</p>
+
+<h2 id="download-bison">Download Bison</h2>
+
+<p>Go to the <a href="http://www.gnu.org/software/bison/">Bison</a> page and download the latest version of Bison.  Extract the compressed file to a somewhat permanent location on your machine (e.g. <strong>/Binaries/bison</strong>).</p>
+
+<h2 id="build-the-bison-binary">Build the Bison Binary</h2>
+
+<p>Open a terminal window and navigate to the folder you setup in the download step.  The instructions for installation are in the INSTALL file.  I was able to build a binary version by running <strong>./configure</strong> followed by <strong>make</strong>.  This will output a <strong>bison</strong> binary in the <strong>src</strong> folder.</p>
+
+<h2 id="set-default-version">Set Default Version</h2>
+
+<p>Typing <strong>bison</strong> in a terminal window will still point to the old version of Bison.  I was able to fix this by renaming the old file in <strong>/usr/local/bin</strong> and setting up a symlink to the new version.</p>
+
+<p>Rename the old version:</p>
+
+<pre><code>cd /usr/local/bin
+mv bison bison-2.3
+</code></pre>
+
+<p>Setup a symlink to the new version:</p>
+
+<pre><code>ln -s /Binaries/bison-3.0.4/src/bison bison
+</code></pre>
+
+<p>Annoyingly, OS X checks <strong>/usr/bin</strong> prior to <strong>/usr/local/bin</strong> when it looks for binaries.  This can be changed by editing <strong>/etc/paths</strong> and moving <strong>/usr/local/bin</strong> before <strong>/usr/bin</strong>.  Note that this file will need to be opened with root permissions.</p>
+
+			</div>
+		</div>
+	</body>
+</html>
