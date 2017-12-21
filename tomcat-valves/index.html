@@ -158,7 +158,7 @@
 
 <h2 id="3-configure-the-server-to-use-the-new-valve">3. Configure The Server To Use The New Valve</h2>
 
-<p>After the CustomErrorReportValve JAR has been placed on the server, Tomcat will need to be told to use it instead of the default class.  This can be done by updating the **<Host>** element in Tomcat's **server.xml** file:</Host></p>
+<p>After the CustomErrorReportValve JAR has been placed on the server, Tomcat will need to be told to use it instead of the default class.  This can be done by updating the <strong>Host</strong> element in Tomcat’s <strong>server.xml</strong> file:</p>
 
 <pre><code>&lt;Host errorReportValveClass="com.upcrob.example.valves.CustomErrorReportValve" . . . /&gt;
 </code></pre>
