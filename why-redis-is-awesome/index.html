@@ -95,46 +95,41 @@
 			</div>
 
 			<div class="sixteen columns">
-				<h1 id="why-redis-is-awesome">Why Redis is Awesome</h1>
+				<h1>Why Redis is Awesome</h1>
 
 <!-- 2/20/2014 -->
 
-<p>I like to complain about things - it’s one of those pastimes that, unlike sailing and golf, requires neither strong skill nor financial backing <sup id="fnref:1"><a href="#fn:1" class="footnote">1</a></sup>.  This may be what makes this article so personally unique: I have nearly nothing bad to say about Redis.</p>
+<p>I like to complain about things - it's one of those pastimes that, unlike sailing and golf, requires neither strong skill nor financial backing [^1].  This may be what makes this article so personally unique: I have nearly nothing bad to say about Redis.</p>
 
-<h2 id="what-is-it">What is it?</h2>
+<p>[^1]: It should be noted that I possess neither of these things.</p>
 
-<p>For those who aren’t familiar with <a href="http://www.redis.io">Redis</a>, it’s a key-value store.  It’s a NoSQL database…kind of.  In the words of its makers, it’s an in-memory data structure server.  In its purist form, it acts like a big hash table tied to a simple TCP server; you can add values (strings, integers…whatever, really) and remove them in constant (<em>O(1)</em>) time.  So what makes such a stupid-simple piece of software so attractive?  I’m glad you asked.</p>
+<h2>What is it?</h2>
 
-<h2 id="1-its-bsd-licensed">1. It’s BSD Licensed</h2>
+<p>For those who aren't familiar with <a href="http://www.redis.io">Redis</a>, it's a key-value store.  It's a NoSQL database...kind of.  In the words of its makers, it's an in-memory data structure server.  In its purist form, it acts like a big hash table tied to a simple TCP server; you can add values (strings, integers...whatever, really) and remove them in constant (<em>O(1)</em>) time.  So what makes such a stupid-simple piece of software so attractive?  I'm glad you asked.</p>
 
-<p>I don’t like reading long licenses, nor do I have anything against the creation and sale of commercial software.  For these reasons, I’m partial to the MIT and BSD licenses, the latter being the legal binding chosen by the creators of Redis.  In a nutshell, it prevents you from suing them.  Other than that, feel free to do what you wish with the software.</p>
+<h2>1. It's BSD Licensed</h2>
 
-<h2 id="2-it-has-a-simple-codebase">2. It has a Simple Codebase</h2>
+<p>I don't like reading long licenses, nor do I have anything against the creation and sale of commercial software.  For these reasons, I'm partial to the MIT and BSD licenses, the latter being the legal binding chosen by the creators of Redis.  In a nutshell, it prevents you from suing them.  Other than that, feel free to do what you wish with the software.</p>
 
-<p>I’m a fan of simple, elegant solutions.  While the elegance of the Redis source code could be debated, its simplicity is hard to argue with.  It consists of a small number (&lt; 90) of source files (including the header files!) all written in ANSI C.  For this reason, it’s an easy program to tinker with.</p>
+<h2>2. It has a Simple Codebase</h2>
 
-<p>The simplicity does, of course, come with a cost: the authors of Redis make it intentionally difficult to add new features to the master codebase in order to retain the system’s ease of use.  Given the amount of feature-creep that abounds in modern software, however, I like to think this is a good thing.</p>
+<p>I'm a fan of simple, elegant solutions.  While the elegance of the Redis source code could be debated, its simplicity is hard to argue with.  It consists of a small number (&lt; 90) of source files (including the header files!) all written in ANSI C.  For this reason, it's an easy program to tinker with.</p>
 
-<h2 id="3-it-has-an-even-simpler-api">3. It has an Even Simpler API</h2>
+<p>The simplicity does, of course, come with a cost: the authors of Redis make it intentionally difficult to add new features to the master codebase in order to retain the system's ease of use.  Given the amount of feature-creep that abounds in modern software, however, I like to think this is a good thing.</p>
+
+<h2>3. It has an Even Simpler API</h2>
 
 <p>The codebase is simple.  The API is even simpler.  The <a href="http://www.redis.io/commands">Redis client API</a> consists of a modest set of easy-to-understand commands that are made even more approachable by the fantastic documentation.  Each command even has its running time (constant, linear, etc) listed next to its description which, admittedly, gives me a warm, fuzzy feeling inside.</p>
 
-<h2 id="4-its-really-really-fast">4. It’s Really, Really Fast</h2>
+<h2>4. It's Really, Really Fast</h2>
 
-<p>One can describe Redis in many ways, but ‘slow’ is not among the list of available adjectives.  It’s an in-memory store so although it’s database size is limited to the amount of available RAM, it doesn’t have to sit around waiting for disk I/O operations to finish.  This quick response time allows the server to be designed around a single-threaded model which minimizes the amount of synchronization that needs to be done.  This focus on the in-memory model has even allowed the authors to make some nice optimizations relating to the way in which data in memory is stored and retrieved.</p>
+<p>One can describe Redis in many ways, but 'slow' is not among the list of available adjectives.  It's an in-memory store so although it's database size is limited to the amount of available RAM, it doesn't have to sit around waiting for disk I/O operations to finish.  This quick response time allows the server to be designed around a single-threaded model which minimizes the amount of synchronization that needs to be done.  This focus on the in-memory model has even allowed the authors to make some nice optimizations relating to the way in which data in memory is stored and retrieved.</p>
 
-<h2 id="5-it-supports-the-observer-pattern">5. It Supports the Observer Pattern</h2>
+<h2>5. It Supports the Observer Pattern</h2>
 
-<p>Redis is primarily a key-value store, so its main focus is on CRUD operations.  This does not by any means imply that its a one-trick pony.  Redis has built-in publish-subscribe support that allows clients to ‘watch’ data stored in the system and respond to changes.  If you wanted, you could even use it as a simple message queue.</p>
+<p>Redis is primarily a key-value store, so its main focus is on CRUD operations.  This does not by any means imply that its a one-trick pony.  Redis has built-in publish-subscribe support that allows clients to 'watch' data stored in the system and respond to changes.  If you wanted, you could even use it as a simple message queue.</p>
 
-<hr />
-<div class="footnotes">
-  <ol>
-    <li id="fn:1">
-      <p>It should be noted that I possess neither of these things. <a href="#fnref:1" class="reversefootnote">&#8617;</a></p>
-    </li>
-  </ol>
-</div>
+<hr>
 
 			</div>
 		</div>

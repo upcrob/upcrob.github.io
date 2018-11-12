@@ -95,27 +95,27 @@
 			</div>
 
 			<div class="sixteen columns">
-				<h1 id="give-vim-a-sublime-facelift">Give Vim a Sublime Facelift</h1>
+				<h1>Give Vim a Sublime Facelift</h1>
 
 <!-- 6/28/2014 -->
 
-<p>I’ve started to use <a href="http://www.sublimetext.com">Sublime Text</a> at work and I have to admit: I like it.  It’s quick, extensible, and has a number of features that make editing code a snap (everyones’ favorite on the Internet appears to be Ctrl-D, but I personally can’t get enough of the “Fuzzy Find” feature.  It even supports “Vintage” mode - a feature that allows a subset of Vim commands.  That said, I still find myself repeatedly returning to Vim for a few reasons:</p>
+<p>I've started to use <a href="http://www.sublimetext.com">Sublime Text</a> at work and I have to admit: I like it.  It's quick, extensible, and has a number of features that make editing code a snap (everyones' favorite on the Internet appears to be Ctrl-D, but I personally can't get enough of the "Fuzzy Find" feature.  It even supports "Vintage" mode - a feature that allows a subset of Vim commands.  That said, I still find myself repeatedly returning to Vim for a few reasons:</p>
 
 <ul>
-  <li><strong>It’s Expensive</strong> - As much as I like Sublime Text, it’s not cheap.  As of this writing, a single user license will run you $70.</li>
-  <li><strong>Command Prompt Access</strong> - I find myself popping out to the command prompt…a lot.  Maybe I’ve been drinking too much of the “Command Line Kool-Aid”, but there’s something about constantly moving a mouse from my text editor to a separate command prompt window that really annoys me.  I’m not knocking Sublime’s built-in build system integration - it’s actually pretty awesome.  However, not everything can (or should) be mapped to a text editor’s “Build” hotkey.</li>
-  <li><strong>Vintage Mode Isn’t Vim</strong> - Again, this isn’t really something that Sublime Text got wrong.  In truth, it’s about as good as it could be.  However, because Vim is designed to operate in terminal environments, and because Sublime Text operates in a windowed environment with features inherent to that ecosystem, there’s some overlap between the two worlds’ keyboard commands, and only a subset of the Vim feature-set can realistically be supported.  I usually get confused and end up shooting myself in the foot when I try to use it, so I generally turn it off.</li>
+<li><strong>It's Expensive</strong> - As much as I like Sublime Text, it's not cheap.  As of this writing, a single user license will run you $70.</li>
+<li><strong>Command Prompt Access</strong> - I find myself popping out to the command prompt...a lot.  Maybe I've been drinking too much of the "Command Line Kool-Aid", but there's something about constantly moving a mouse from my text editor to a separate command prompt window that really annoys me.  I'm not knocking Sublime's built-in build system integration - it's actually pretty awesome.  However, not everything can (or should) be mapped to a text editor's "Build" hotkey.</li>
+<li><strong>Vintage Mode Isn't Vim</strong> - Again, this isn't really something that Sublime Text got wrong.  In truth, it's about as good as it could be.  However, because Vim is designed to operate in terminal environments, and because Sublime Text operates in a windowed environment with features inherent to that ecosystem, there's some overlap between the two worlds' keyboard commands, and only a subset of the Vim feature-set can realistically be supported.  I usually get confused and end up shooting myself in the foot when I try to use it, so I generally turn it off.</li>
 </ul>
 
 <p>In its default state, Vim is pretty hideous and hard to use (no syntax highlighting, no automatic indenting, etc, etc).  With a few tweaks, however, it can actually be quite beautiful and even reminiscent of Sublime Text.</p>
 
-<h2 id="1-install-ctrlpvim">1. Install ctrlp.vim</h2>
+<h2>1. Install ctrlp.vim</h2>
 
-<p>This nifty little plugin adds a “fuzzy find” feature to your Vim install.  The download and installation instructions can be found, <a href="http://kien.github.io/ctrlp.vim">here</a>.  While you can choose where you would like to extract the plugin files on your own computer, this tutorial assumes that they are located in, <strong>~/.vim/bundle</strong>.</p>
+<p>This nifty little plugin adds a "fuzzy find" feature to your Vim install.  The download and installation instructions can be found, <a href="http://kien.github.io/ctrlp.vim">here</a>.  While you can choose where you would like to extract the plugin files on your own computer, this tutorial assumes that they are located in, <strong>~/.vim/bundle</strong>.</p>
 
-<h2 id="2-update-vimrc">2. Update .vimrc</h2>
+<h2>2. Update .vimrc</h2>
 
-<p>Add the following lines to your <strong>.vimrc</strong> file.  Note that this subset doesn’t include configuration for other plugins and features, or account for your own personal preferences (eg. I like my tab space to be set to 4).</p>
+<p>Add the following lines to your <strong>.vimrc</strong> file.  Note that this subset doesn't include configuration for other plugins and features, or account for your own personal preferences (eg. I like my tab space to be set to 4).</p>
 
 <pre><code>set ai
 set ts=4
@@ -128,21 +128,21 @@ filetype plugin indent on
 syntax on
 </code></pre>
 
-<h2 id="3-update-the-terminal-theme-mac-os-x-only">3. Update the Terminal Theme (Mac OS X only)</h2>
+<h2>3. Update the Terminal Theme (Mac OS X only)</h2>
 
 <ol>
-  <li>Download the <a href="https://github.com/stephenway/monokai.terminal">Monokai.terminal</a> color scheme.</li>
-  <li>Double-click on the Monokai.terminal file.  An OS X terminal window will be opened.</li>
-  <li>Under <strong>Terminal</strong> &gt; <strong>Preferences</strong>, select the <em>Monokai</em> profile, and set it as the default.</li>
+<li>Download the <a href="https://github.com/stephenway/monokai.terminal">Monokai.terminal</a> color scheme.</li>
+<li>Double-click on the Monokai.terminal file.  An OS X terminal window will be opened.</li>
+<li>Under <strong>Terminal</strong> > <strong>Preferences</strong>, select the <em>Monokai</em> profile, and set it as the default.</li>
 </ol>
 
 <p>If all goes well, source files opened with Vim from the terminal should look very Sublime Text-esque:</p>
 
-<p><img src="../images/sublime-vim/source.png" alt="Source Code" /></p>
+<p><img src="source.png" alt="Source Code" title=""></p>
 
 <p>And with the <strong>ctrlp</strong> plugin, finding files in and under your current directory is a snap:</p>
 
-<p><img src="../images/sublime-vim/fuzzy.png" alt="Fuzzy Find" /></p>
+<p><img src="fuzzy.png" alt="Fuzzy Find" title=""></p>
 
 			</div>
 		</div>

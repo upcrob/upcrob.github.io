@@ -95,41 +95,41 @@
 			</div>
 
 			<div class="sixteen columns">
-				<h1 id="owasp-jotp-overview">OWASP jOTP Overview</h1>
+				<h1>OWASP jOTP Overview</h1>
 
 <p>IMPORTANT: These instructions are only applicable for 1.x versions of jOTP.  Later major versions use a different API and are configured differently.</p>
 
 <!-- 3/20/2014 -->
 
-<h2 id="what-is-owasp-jotp">What is OWASP jOTP?</h2>
+<h2>What is OWASP jOTP?</h2>
 
-<p><a href="https://www.owasp.org/index.php/OWASP_JOTP_Project">OWASP jOTP</a> is a one-time-use token service.  In a nutshell, it’s a backend application that applications can use to achieve stronger end-user authentication.  For example, suppose that you have a high-risk web application.  While you will want to protect this app with username / password authentication, many would argue that this isn’t enough; passwords can be stolen from databases, shared with others, or extracted from unencrypted network traffic.  For this reason, it’s frequently useful to have an additional, unrelated and unpredictable factor that helps an application verify that a user is who he says he is.</p>
+<p><a href="https://www.owasp.org/index.php/OWASP_JOTP_Project">OWASP jOTP</a> is a one-time-use token service.  In a nutshell, it's a backend application that applications can use to achieve stronger end-user authentication.  For example, suppose that you have a high-risk web application.  While you will want to protect this app with username / password authentication, many would argue that this isn't enough; passwords can be stolen from databases, shared with others, or extracted from unencrypted network traffic.  For this reason, it's frequently useful to have an additional, unrelated and unpredictable factor that helps an application verify that a user is who he says he is.</p>
 
 <p>Enter jOTP.  This web service resides in your backend infrastructure and waits for an application to request a random token.  When a request comes in, jOTP will automatically send the token via text message or email to the end user, and keep the token in memory for a pre-configured amount of time.  When the user enters the token that he received into the client application, it will subsequently make a call to jOTP to verify that it is still valid.  If so, and if all other factors are valid as well, the end-user can be authenticated successfully.</p>
 
 <p>For a short jOTP and sample application walkthrough, see the <a href="jotp-tutorial">jOTP Tutorial</a>.</p>
 
-<h2 id="an-example-use-case">An Example Use Case</h2>
+<h2>An Example Use Case</h2>
 
-<p>Suppose that this is the application you want to protect with multifactor authentication (of course, yours will be much prettier, right?)  The first page the user will see prompts him to enter his username and click a “Generate Token” button:</p>
+<p>Suppose that this is the application you want to protect with multifactor authentication (of course, yours will be much prettier, right?)  The first page the user will see prompts him to enter his username and click a "Generate Token" button:</p>
 
-<p><img src="../images/jotp-overview/login-username.png" alt="Login page with username" /></p>
+<p><img src="login-username.png" alt="Login page with username" title=""></p>
 
-<p>After the “Generate Token” button is clicked, the application does an internal lookup (against a backend directory or database) to determine what the user’s phone number is.  Assuming the user was real, the application will issue a request to jOTP for a one-time-use token to be sent to his phone.  Shortly after, the user receives a text message with this token:</p>
+<p>After the "Generate Token" button is clicked, the application does an internal lookup (against a backend directory or database) to determine what the user's phone number is.  Assuming the user was real, the application will issue a request to jOTP for a one-time-use token to be sent to his phone.  Shortly after, the user receives a text message with this token:</p>
 
-<p><img src="../images/jotp-overview/token-msg.png" alt="OTP token from jOTP on cell-phone" /></p>
+<p><img src="token-msg.png" alt="OTP token from jOTP on cell-phone" title=""></p>
 
-<p>Once this token has been received, the user can enter it into the subsequent web form (shown after clicking the “Generate Token” button on the first.)  This form requests that the user enters his primary password, as well as the temporary token from jOTP.  Note that these are both shown in cleartext below for clarity in this example; normally, these would mask the user’s input.</p>
+<p>Once this token has been received, the user can enter it into the subsequent web form (shown after clicking the "Generate Token" button on the first.)  This form requests that the user enters his primary password, as well as the temporary token from jOTP.  Note that these are both shown in cleartext below for clarity in this example; normally, these would mask the user's input.</p>
 
-<p><img src="../images/jotp-overview/username-password-token.png" alt="Login page prompting for OTP token" /></p>
+<p><img src="username-password-token.png" alt="Login page prompting for OTP token" title=""></p>
 
-<p>If all goes well and the time elapsed between when the token was generated and when it was entered into the second login form hasn’t exceeded the maximum time in the jOTP configuration, the user will be logged in successfully:</p>
+<p>If all goes well and the time elapsed between when the token was generated and when it was entered into the second login form hasn't exceeded the maximum time in the jOTP configuration, the user will be logged in successfully:</p>
 
-<p><img src="../images/jotp-overview/secured.png" alt="Secured page" /></p>
+<p><img src="secured.png" alt="Secured page" title=""></p>
 
-<p>If, however, the user entered the wrong password or jOTP authentication token, he will be redirected to a “login failed” page:</p>
+<p>If, however, the user entered the wrong password or jOTP authentication token, he will be redirected to a "login failed" page:</p>
 
-<p><img src="../images/jotp-overview/login-failed.png" alt="Login failed" /></p>
+<p><img src="login-failed.png" alt="Login failed" title=""></p>
 
 			</div>
 		</div>

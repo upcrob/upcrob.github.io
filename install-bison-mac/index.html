@@ -95,21 +95,21 @@
 			</div>
 
 			<div class="sixteen columns">
-				<h1 id="installing-bison-yacc-on-a-mac">Installing Bison (Yacc) on a Mac</h1>
+				<h1>Installing Bison (Yacc) on a Mac</h1>
 
 <!-- 11/21/2015 -->
 
-<p>By default, OS X comes with a <em>very</em> antiquated version of GNU Bison (2.3 on my machine).  I’ve had to install v3 on my machine twice now, so I figured it was something that should be documented - if for no other reason than to help Future Rob.</p>
+<p>By default, OS X comes with a <em>very</em> antiquated version of GNU Bison (2.3 on my machine).  I've had to install v3 on my machine twice now, so I figured it was something that should be documented - if for no other reason than to help Future Rob.</p>
 
-<h2 id="download-bison">Download Bison</h2>
+<h2>Download Bison</h2>
 
 <p>Go to the <a href="http://www.gnu.org/software/bison/">Bison</a> page and download the latest version of Bison.  Extract the compressed file to a somewhat permanent location on your machine (e.g. <strong>/Binaries/bison</strong>).</p>
 
-<h2 id="build-the-bison-binary">Build the Bison Binary</h2>
+<h2>Build the Bison Binary</h2>
 
 <p>Open a terminal window and navigate to the folder you setup in the download step.  The instructions for installation are in the INSTALL file.  I was able to build a binary version by running <strong>./configure</strong> followed by <strong>make</strong>.  This will output a <strong>bison</strong> binary in the <strong>src</strong> folder.</p>
 
-<h2 id="set-default-version">Set Default Version</h2>
+<h2>Set Default Version</h2>
 
 <p>Typing <strong>bison</strong> in a terminal window will still point to the old version of Bison.  I was able to fix this by renaming the old file in <strong>/usr/local/bin</strong> and setting up a symlink to the new version.</p>
 

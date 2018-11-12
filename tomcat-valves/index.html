@@ -95,85 +95,88 @@
 			</div>
 
 			<div class="sixteen columns">
-				<h1 id="writing-a-custom-error-report-valve-for-tomcat">Writing a Custom Error Report Valve for Tomcat</h1>
+				<h1>Writing a Custom Error Report Valve for Tomcat</h1>
 
 <!-- 2/15/2014 -->
 
-<p>If you’ve developed (or used a web application running) on a Java-based server before, you’ve probably seen something like this:</p>
+<p>If you've developed (or used a web application running) on a Java-based server before, you've probably seen something like this:</p>
 
-<p><img src="../images/tomcat-valves/default-output.png" alt="Error Page" /></p>
+<p><img src="default-output.png" alt="Error Page" title=""></p>
 
-<p>This can happen for a number of reasons ranging from a misconfigured server to a bug in an application.  While we developers like to think we can offer a “bug-free guarantee”, this frequently isn’t the case.  Usually, these error pages contain harmless information that’s just a cryptic annoyance to end users.  Sometimes, however, the stacktraces contained in them can leak information that can be used to by attackers to pin-point weaknesses in applications and infrastructure.  For this reason, it’s useful to be able to override the default error page.</p>
+<p>This can happen for a number of reasons ranging from a misconfigured server to a bug in an application.  While we developers like to think we can offer a "bug-free guarantee", this frequently isn't the case.  Usually, these error pages contain harmless information that's just a cryptic annoyance to end users.  Sometimes, however, the stacktraces contained in them can leak information that can be used to by attackers to pin-point weaknesses in applications and infrastructure.  For this reason, it's useful to be able to override the default error page.  </p>
 
-<p>In Tomcat, this can be done by creating a custom <strong>Valve</strong>.  In a nutshell, valves act as universal filters for all applications on the server.  In this short tutorial, I’ll describe how to override Tomcat’s default <strong>ErrorReportValve</strong>, the valve responsible for creating the output shown above, to display something a little more friendly (though not necessarily pretty.)</p>
+<p>In Tomcat, this can be done by creating a custom <strong>Valve</strong>.  In a nutshell, valves act as universal filters for all applications on the server.  In this short tutorial, I'll describe how to override Tomcat's default <strong>ErrorReportValve</strong>, the valve responsible for creating the output shown above, to display something a little more friendly (though not necessarily pretty.)</p>
 
-<h2 id="1-write-the-valve-class">1. Write The Valve Class</h2>
+<h2>1. Write The Valve Class</h2>
 
-<p>The first thing we’ll need to do is write our replacement valve.  While you can do this entirely from scratch, it’s easiest just to override the <strong>report()</strong> method in built-in <strong>ErrorReportValve</strong> class:</p>
+<p>The first thing we'll need to do is write our replacement valve.  While you can do this entirely from scratch, it's easiest just to override the <strong>report()</strong> method in built-in <strong>ErrorReportValve</strong> class:</p>
 
-<pre><code>	package com.upcrob.example.valves;
+<p>```
+    package com.upcrob.example.valves;</p>
 
-	import java.io.BufferedWriter;
-	import java.io.IOException;
-	import java.io.OutputStreamWriter;
-	import java.util.logging.Logger;
+<pre><code>import java.io.BufferedWriter;
+import java.io.IOException;
+import java.io.OutputStreamWriter;
+import java.util.logging.Logger;
 
-	import org.apache.catalina.connector.Request;
-	import org.apache.catalina.connector.Response;
-	import org.apache.catalina.valves.ErrorReportValve;
+import org.apache.catalina.connector.Request;
+import org.apache.catalina.connector.Response;
+import org.apache.catalina.valves.ErrorReportValve;
 
-	public class CustomErrorReportValve extends ErrorReportValve {
+public class CustomErrorReportValve extends ErrorReportValve {
 
-		// Create a simple logger
-		Logger log = Logger.getLogger(CustomErrorReportValve.class.getName());
+    // Create a simple logger
+    Logger log = Logger.getLogger(CustomErrorReportValve.class.getName());
 
-		@Override
-		protected void report(Request request, Response response, Throwable t) {
-			try {
-				// Write a more friendly, less technical message to the user
-				BufferedWriter out = new BufferedWriter(new OutputStreamWriter(response.getOutputStream()));
-				out.write("&lt;html&gt;&lt;head&gt;&lt;title&gt;Oops&lt;/title&gt;&lt;body&gt;");
-				out.write("&lt;h1&gt;Oops&lt;/h1&gt;");
-				out.write("&lt;p&gt;Well, that didn't go as we had expected.&lt;/p&gt;");
-				out.write("&lt;p&gt;Don't worry though, we're working on it.&lt;/p&gt;");
-				out.write("&lt;/body&gt;&lt;/html&gt;");
-				out.close();
+    @Override
+    protected void report(Request request, Response response, Throwable t) {
+        try {
+            // Write a more friendly, less technical message to the user
+            BufferedWriter out = new BufferedWriter(new OutputStreamWriter(response.getOutputStream()));
+            out.write("&lt;html&gt;&lt;head&gt;&lt;title&gt;Oops&lt;/title&gt;&lt;body&gt;");
+            out.write("&lt;h1&gt;Oops&lt;/h1&gt;");
+            out.write("&lt;p&gt;Well, that didn't go as we had expected.&lt;/p&gt;");
+            out.write("&lt;p&gt;Don't worry though, we're working on it.&lt;/p&gt;");
+            out.write("&lt;/body&gt;&lt;/html&gt;");
+            out.close();
 
-				// Log the error with your favorite logging framework...
-				log.severe("Uncaught throwable was thrown: " + t.getMessage());
-			} catch (IOException e) {
-				e.printStackTrace();
-			}
-		}
-	}
+            // Log the error with your favorite logging framework...
+            log.severe("Uncaught throwable was thrown: " + t.getMessage());
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+}
 </code></pre>
 
-<p>By overriding <strong>report()</strong>, we can modify what Tomcat writes out to the end user’s browser.  In this case, we’ll just write out a simple “oops” page.  This can be as simple or as complex as you would like.</p>
+<p>```</p>
 
-<p>While the stacktrace has been concealed from the end user, it’s helpful for the developer to know that it <em>did</em>, in fact, happen.  For this reason, we log the message from the <strong>Throwable</strong> that was caught to an output log.  Again, this can be as simple or complex as you wish to make it.</p>
+<p>By overriding <strong>report()</strong>, we can modify what Tomcat writes out to the end user's browser.  In this case, we'll just write out a simple "oops" page.  This can be as simple or as complex as you would like.</p>
 
-<h2 id="2-deploy-the-custom-valve">2. Deploy The Custom Valve</h2>
+<p>While the stacktrace has been concealed from the end user, it's helpful for the developer to know that it <em>did</em>, in fact, happen.  For this reason, we log the message from the <strong>Throwable</strong> that was caught to an output log.  Again, this can be as simple or complex as you wish to make it.</p>
 
-<p>Once we’ve written the <strong>CustomErrorReportValve</strong>, it will need to be deployed to the server.  We simply compile the above class and package it into a JAR file.  Since valves are loaded at the server level, the JAR containing the compiled class file will need to be placed in the instance’s <strong>lib</strong> directory.</p>
+<h2>2. Deploy The Custom Valve</h2>
 
-<h2 id="3-configure-the-server-to-use-the-new-valve">3. Configure The Server To Use The New Valve</h2>
+<p>Once we've written the <strong>CustomErrorReportValve</strong>, it will need to be deployed to the server.  We simply compile the above class and package it into a JAR file.  Since valves are loaded at the server level, the JAR containing the compiled class file will need to be placed in the instance's <strong>lib</strong> directory.</p>
 
-<p>After the CustomErrorReportValve JAR has been placed on the server, Tomcat will need to be told to use it instead of the default class.  This can be done by updating the <strong>Host</strong> element in Tomcat’s <strong>server.xml</strong> file:</p>
+<h2>3. Configure The Server To Use The New Valve</h2>
+
+<p>After the CustomErrorReportValve JAR has been placed on the server, Tomcat will need to be told to use it instead of the default class.  This can be done by updating the <strong>Host</strong> element in Tomcat's <strong>server.xml</strong> file:</p>
 
 <pre><code>&lt;Host errorReportValveClass="com.upcrob.example.valves.CustomErrorReportValve" . . . /&gt;
 </code></pre>
 
 <p>IMPORTANT: Because the changes in steps 2 and 3 occur at the server level, Tomcat will need to be restarted whenever a change is made to the valve JAR or <strong>server.xml</strong>.</p>
 
-<h2 id="4-watch-the-magic-happen">4. Watch the Magic Happen</h2>
+<h2>4. Watch the Magic Happen</h2>
 
-<p>Start the server and navigate to an app that throws (but doesn’t catch) a <strong>RuntimeException</strong>.  Instead of seeing the error at the beginning of this article in the browser, the user should see something like this:</p>
+<p>Start the server and navigate to an app that throws (but doesn't catch) a <strong>RuntimeException</strong>.  Instead of seeing the error at the beginning of this article in the browser, the user should see something like this:</p>
 
-<p><img src="../images/tomcat-valves/nice-output.png" alt="Friendly Page" /></p>
+<p><img src="nice-output.png" alt="Friendly Page" title=""></p>
 
 <p>Finally, something like this should show up in the logs:</p>
 
-<p><img src="../images/tomcat-valves/log-message.png" alt="Log Output" /></p>
+<p><img src="log-message.png" alt="Log Output" title=""></p>
 
 			</div>
 		</div>

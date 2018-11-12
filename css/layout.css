@@ -105,6 +105,11 @@ a:hover, a:active {
 	text-decoration: underline;
 }
 
+.photo {
+	width: 100%;
+	align-content: center;
+}
+
 #navBar {
 	font-size: 20px;
 	/*font-weight: bold;
