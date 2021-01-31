@@ -1,63 +1,19 @@
 <!DOCTYPE html>
-	<!--[if lt IE 7 ]><html class="ie ie6" lang="en"> <![endif]-->
-	<!--[if IE 7 ]><html class="ie ie7" lang="en"> <![endif]-->
-	<!--[if IE 8 ]><html class="ie ie8" lang="en"> <![endif]-->
-	<!--[if (gte IE 9)|!(IE)]><!--><html lang="en"> <!--<![endif]-->
+<html lang="en">
 	<head>
-
-		<!-- Basic Page Needs ================================================== -->
 		<meta charset="utf-8">
 		<title></title>
 		<meta name="description" content="">
 		<meta name="author" content="">
 
-		<!-- Mobile Specific Metas ================================================== -->
 		<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 
-		<!-- CSS ================================================== -->
 		<link rel="stylesheet" href="../css/base.css">
 		<link rel="stylesheet" href="../css/skeleton.css">
 		<link rel="stylesheet" href="../css/layout.css">
 		<link href="../css/font-awesome/css/font-awesome.min.css" rel="stylesheet">
-
-		<!--[if lt IE 9]>
-			<script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
-		<![endif]-->
-
-		<!-- Favicons ================================================== -->
-		<link rel="shortcut icon" href="../images/favicon.ico">
-		<link rel="apple-touch-icon" href="../images/apple-touch-icon.png">
-		<link rel="apple-touch-icon" sizes="72x72" href="../images/apple-touch-icon-72x72.png">
-		<link rel="apple-touch-icon" sizes="114x114" href="../images/apple-touch-icon-114x114.png">
-
-		<script>
-			<!-- Callout macros -->
-			function formatCallouts() {
-				var tags = document.getElementsByTagName('p');
-				for (var i = 0; i < tags.length; i++) {
-					if (tags[i].innerHTML.startsWith('NOTE:')) {
-						tags[i].className = 'note';
-						tags[i].innerHTML = tags[i].innerHTML.replace('NOTE:', '<i class="fa fa-info-circle fa-3x" style="color: #1111BB; margin-right: 15px;"></i>');
-					} else if (tags[i].innerHTML.startsWith('WARNING:')) {
-						tags[i].className = 'warning';
-						tags[i].innerHTML = tags[i].innerHTML.replace('WARNING:', '<i class="fa fa-exclamation-triangle fa-3x" style="color: #BB1111; margin-right: 15px;"></i>');
-					} else if (tags[i].innerHTML.startsWith('IMPORTANT:')) {
-						tags[i].className = 'warning';
-						tags[i].innerHTML = tags[i].innerHTML.replace('IMPORTANT:', '<i class="fa fa-exclamation-circle fa-3x" style="color: #BB1111; margin-right: 15px;"></i>');
-					} else if (tags[i].innerHTML.startsWith('TIP:')) {
-						tags[i].className = 'tip';
-						tags[i].innerHTML = tags[i].innerHTML.replace('TIP:', '<i class="fa fa-lightbulb-o fa-3x" style="color: #248F24; margin-right: 15px;"></i>');
-					}
-				}
-			}
-		</script>
-
-		<!-- End Google Analytics -->
 	</head>
-	<body onload="formatCallouts()">
-		<!-- Primary Page Layout
-		================================================== -->
-
+	<body>
 		<div class="container">
 			<div class="twelve columns">
 				<div class="header">RobUpcraft(.com)</div>
@@ -76,50 +32,69 @@
 			</div>
 			
 			<div id="navBar" class="sixteen columns">
-				<!-- Links -->
 				<a href="/">Home</a> |
 				<a href="/projects">Projects</a> |
 				<a href="/blog">(b)log</a> |
-				<a href="/photos/">Photos</a>
+				<a href="/photos">Photos</a>
 			</div>
 
 			<div class="sixteen columns">
 				<h1>Why Redis is Awesome</h1>
-
-<!-- 2/20/2014 -->
-
-<p>I like to complain about things - it's one of those pastimes that, unlike sailing and golf, requires neither strong skill nor financial backing [^1].  This may be what makes this article so personally unique: I have nearly nothing bad to say about Redis.</p>
-
-<p>[^1]: It should be noted that I possess neither of these things.</p>
-
-<h2>What is it?</h2>
-
-<p>For those who aren't familiar with <a href="http://www.redis.io">Redis</a>, it's a key-value store.  It's a NoSQL database...kind of.  In the words of its makers, it's an in-memory data structure server.  In its purist form, it acts like a big hash table tied to a simple TCP server; you can add values (strings, integers...whatever, really) and remove them in constant (<em>O(1)</em>) time.  So what makes such a stupid-simple piece of software so attractive?  I'm glad you asked.</p>
-
-<h2>1. It's BSD Licensed</h2>
-
-<p>I don't like reading long licenses, nor do I have anything against the creation and sale of commercial software.  For these reasons, I'm partial to the MIT and BSD licenses, the latter being the legal binding chosen by the creators of Redis.  In a nutshell, it prevents you from suing them.  Other than that, feel free to do what you wish with the software.</p>
-
-<h2>2. It has a Simple Codebase</h2>
-
-<p>I'm a fan of simple, elegant solutions.  While the elegance of the Redis source code could be debated, its simplicity is hard to argue with.  It consists of a small number (&lt; 90) of source files (including the header files!) all written in ANSI C.  For this reason, it's an easy program to tinker with.</p>
-
-<p>The simplicity does, of course, come with a cost: the authors of Redis make it intentionally difficult to add new features to the master codebase in order to retain the system's ease of use.  Given the amount of feature-creep that abounds in modern software, however, I like to think this is a good thing.</p>
-
-<h2>3. It has an Even Simpler API</h2>
-
-<p>The codebase is simple.  The API is even simpler.  The <a href="http://www.redis.io/commands">Redis client API</a> consists of a modest set of easy-to-understand commands that are made even more approachable by the fantastic documentation.  Each command even has its running time (constant, linear, etc) listed next to its description which, admittedly, gives me a warm, fuzzy feeling inside.</p>
-
-<h2>4. It's Really, Really Fast</h2>
-
-<p>One can describe Redis in many ways, but 'slow' is not among the list of available adjectives.  It's an in-memory store so although it's database size is limited to the amount of available RAM, it doesn't have to sit around waiting for disk I/O operations to finish.  This quick response time allows the server to be designed around a single-threaded model which minimizes the amount of synchronization that needs to be done.  This focus on the in-memory model has even allowed the authors to make some nice optimizations relating to the way in which data in memory is stored and retrieved.</p>
-
-<h2>5. It Supports the Observer Pattern</h2>
-
-<p>Redis is primarily a key-value store, so its main focus is on CRUD operations.  This does not by any means imply that its a one-trick pony.  Redis has built-in publish-subscribe support that allows clients to 'watch' data stored in the system and respond to changes.  If you wanted, you could even use it as a simple message queue.</p>
-
-<hr>
-
+				
+				<p>I like to complain about things - it's one of those pastimes that, unlike sailing and golf, requires neither strong
+					skill nor financial backing <sup>1</sup>. This may be what makes this article so personally unique: I have nearly nothing
+					bad to say about Redis.</p>
+				
+				<p><sup>1</sup> It should be noted that I possess neither of these things.</p>
+				
+				<h2>What is it?</h2>
+				
+				<p>For those who aren't familiar with <a href="http://www.redis.io">Redis</a>, it's a key-value store. It's a NoSQL
+					database...kind of. In the words of its makers, it's an in-memory data structure server. In its purist form, it acts
+					like a big hash table tied to a simple TCP server; you can add values (strings, integers...whatever, really) and
+					remove them in constant (<em>O(1)</em>) time. So what makes such a stupid-simple piece of software so attractive?
+					I'm glad you asked.</p>
+				
+				<h2>1. It's BSD Licensed</h2>
+				
+				<p>I don't like reading long licenses, nor do I have anything against the creation and sale of commercial software. For
+					these reasons, I'm partial to the MIT and BSD licenses, the latter being the legal binding chosen by the creators of
+					Redis. In a nutshell, it prevents you from suing them. Other than that, feel free to do what you wish with the
+					software.</p>
+				
+				<h2>2. It has a Simple Codebase</h2>
+				
+				<p>I'm a fan of simple, elegant solutions. While the elegance of the Redis source code could be debated, its simplicity
+					is hard to argue with. It consists of a small number (&lt; 90) of source files (including the header files!) all
+					written in ANSI C. For this reason, it's an easy program to tinker with.</p>
+				
+				<p>The simplicity does, of course, come with a cost: the authors of Redis make it intentionally difficult to add new
+					features to the master codebase in order to retain the system's ease of use. Given the amount of feature-creep that
+					abounds in modern software, however, I like to think this is a good thing.</p>
+				
+				<h2>3. It has an Even Simpler API</h2>
+				
+				<p>The codebase is simple. The API is even simpler. The <a href="http://www.redis.io/commands">Redis client API</a>
+					consists of a modest set of easy-to-understand commands that are made even more approachable by the fantastic
+					documentation. Each command even has its running time (constant, linear, etc) listed next to its description which,
+					admittedly, gives me a warm, fuzzy feeling inside.</p>
+				
+				<h2>4. It's Really, Really Fast</h2>
+				
+				<p>One can describe Redis in many ways, but 'slow' is not among the list of available adjectives. It's an in-memory
+					store so although it's database size is limited to the amount of available RAM, it doesn't have to sit around
+					waiting for disk I/O operations to finish. This quick response time allows the server to be designed around a
+					single-threaded model which minimizes the amount of synchronization that needs to be done. This focus on the
+					in-memory model has even allowed the authors to make some nice optimizations relating to the way in which data in
+					memory is stored and retrieved.</p>
+				
+				<h2>5. It Supports the Observer Pattern</h2>
+				
+				<p>Redis is primarily a key-value store, so its main focus is on CRUD operations. This does not by any means imply that
+					its a one-trick pony. Redis has built-in publish-subscribe support that allows clients to 'watch' data stored in the
+					system and respond to changes. If you wanted, you could even use it as a simple message queue.</p>
+				
+				<hr>
 			</div>
 		</div>
 	</body>

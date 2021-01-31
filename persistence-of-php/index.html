@@ -1,63 +1,19 @@
 <!DOCTYPE html>
-	<!--[if lt IE 7 ]><html class="ie ie6" lang="en"> <![endif]-->
-	<!--[if IE 7 ]><html class="ie ie7" lang="en"> <![endif]-->
-	<!--[if IE 8 ]><html class="ie ie8" lang="en"> <![endif]-->
-	<!--[if (gte IE 9)|!(IE)]><!--><html lang="en"> <!--<![endif]-->
+<html lang="en">
 	<head>
-
-		<!-- Basic Page Needs ================================================== -->
 		<meta charset="utf-8">
 		<title></title>
 		<meta name="description" content="">
 		<meta name="author" content="">
 
-		<!-- Mobile Specific Metas ================================================== -->
 		<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 
-		<!-- CSS ================================================== -->
 		<link rel="stylesheet" href="../css/base.css">
 		<link rel="stylesheet" href="../css/skeleton.css">
 		<link rel="stylesheet" href="../css/layout.css">
 		<link href="../css/font-awesome/css/font-awesome.min.css" rel="stylesheet">
-
-		<!--[if lt IE 9]>
-			<script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
-		<![endif]-->
-
-		<!-- Favicons ================================================== -->
-		<link rel="shortcut icon" href="../images/favicon.ico">
-		<link rel="apple-touch-icon" href="../images/apple-touch-icon.png">
-		<link rel="apple-touch-icon" sizes="72x72" href="../images/apple-touch-icon-72x72.png">
-		<link rel="apple-touch-icon" sizes="114x114" href="../images/apple-touch-icon-114x114.png">
-
-		<script>
-			<!-- Callout macros -->
-			function formatCallouts() {
-				var tags = document.getElementsByTagName('p');
-				for (var i = 0; i < tags.length; i++) {
-					if (tags[i].innerHTML.startsWith('NOTE:')) {
-						tags[i].className = 'note';
-						tags[i].innerHTML = tags[i].innerHTML.replace('NOTE:', '<i class="fa fa-info-circle fa-3x" style="color: #1111BB; margin-right: 15px;"></i>');
-					} else if (tags[i].innerHTML.startsWith('WARNING:')) {
-						tags[i].className = 'warning';
-						tags[i].innerHTML = tags[i].innerHTML.replace('WARNING:', '<i class="fa fa-exclamation-triangle fa-3x" style="color: #BB1111; margin-right: 15px;"></i>');
-					} else if (tags[i].innerHTML.startsWith('IMPORTANT:')) {
-						tags[i].className = 'warning';
-						tags[i].innerHTML = tags[i].innerHTML.replace('IMPORTANT:', '<i class="fa fa-exclamation-circle fa-3x" style="color: #BB1111; margin-right: 15px;"></i>');
-					} else if (tags[i].innerHTML.startsWith('TIP:')) {
-						tags[i].className = 'tip';
-						tags[i].innerHTML = tags[i].innerHTML.replace('TIP:', '<i class="fa fa-lightbulb-o fa-3x" style="color: #248F24; margin-right: 15px;"></i>');
-					}
-				}
-			}
-		</script>
-
-		<!-- End Google Analytics -->
 	</head>
-	<body onload="formatCallouts()">
-		<!-- Primary Page Layout
-		================================================== -->
-
+	<body>
 		<div class="container">
 			<div class="twelve columns">
 				<div class="header">RobUpcraft(.com)</div>
@@ -76,26 +32,34 @@
 			</div>
 			
 			<div id="navBar" class="sixteen columns">
-				<!-- Links -->
 				<a href="/">Home</a> |
 				<a href="/projects">Projects</a> |
 				<a href="/blog">(b)log</a> |
-				<a href="/photos/">Photos</a>
+				<a href="/photos">Photos</a>
 			</div>
 
 			<div class="sixteen columns">
 				<h1>The Persistance of PHP: Why I Can't Help But Love It</h1>
-
-<!-- 2/12/2014 -->
-
-<p>When I was in college, I had a friend who, for better or worse, led a less-than-wholesome academic lifestyle.  He pulled all nighters fairly frequently, and many was the morning when he could be found sprawled out on a couch with his laptop and a paper sign instructing the reader to "wake me".  He was the kind of guy who could wait until half an hour prior to a paper was due, and then hammer it out and submit it within ten seconds of the deadline.</p>
-
-<p>For reasons like this, waiting for him to show up to scheduled events was always a bit nerve wracking.  Nevertheless, he (almost) always materialized, even if it was at the eleventh hour (it usually was).  Thus, in spite of these habits that would normally make me distrust anyone exhibiting them, you couldn't dislike the guy.</p>
-
-<p>I like to think of <a href="http://www.php.net/">PHP</a> the same way.  Let's face it: it's ugly.  There are mountains of built-in functions, OOP was an afterthought, and it has enough regular expression support to perplex even <a href="http://www.wall.org/~larry/">Larry Wall</a>.  It's certainly not my implementation language of choice for writing large applications that I will have to maintain ad-infinitum.  But, when push comes to shove, there's just about no better (or prevalent) language for getting quick and dirty web projects done on a tight schedule.</p>
-
-<p>So let the purists and grammar-snobs complain about its structure and expound upon why you should be using [insert new/trendy/functional language here].  When you have a pile of nails to pound in, no amount of hammering on them with a screwdriver is going to make your job any easier.  Thus, like my somewhat haphazard roomie, this  unashamed, no-nonsense, and even last-minute mentality behind PHP is what makes me love it.</p>
-
+				
+				<p>When I was in college, I had a friend who, for better or worse, led a less-than-wholesome academic lifestyle. He
+					pulled all nighters fairly frequently, and many was the morning when he could be found sprawled out on a couch with
+					his laptop and a paper sign instructing the reader to "wake me". He was the kind of guy who could wait until half an
+					hour prior to a paper was due, and then hammer it out and submit it within ten seconds of the deadline.</p>
+				
+				<p>For reasons like this, waiting for him to show up to scheduled events was always a bit nerve wracking. Nevertheless,
+					he (almost) always materialized, even if it was at the eleventh hour (it usually was). Thus, in spite of these
+					habits that would normally make me distrust anyone exhibiting them, you couldn't dislike the guy.</p>
+				
+				<p>I like to think of <a href="http://www.php.net/">PHP</a> the same way. Let's face it: it's ugly. There are mountains
+					of built-in functions, OOP was an afterthought, and it has enough regular expression support to perplex even <a
+						href="http://www.wall.org/~larry/">Larry Wall</a>. It's certainly not my implementation language of choice for
+					writing large applications that I will have to maintain ad-infinitum. But, when push comes to shove, there's just
+					about no better (or prevalent) language for getting quick and dirty web projects done on a tight schedule.</p>
+				
+				<p>So let the purists and grammar-snobs complain about its structure and expound upon why you should be using [insert
+					new/trendy/functional language here]. When you have a pile of nails to pound in, no amount of hammering on them with
+					a screwdriver is going to make your job any easier. Thus, like my somewhat haphazard roomie, this unashamed,
+					no-nonsense, and even last-minute mentality behind PHP is what makes me love it.</p>
 			</div>
 		</div>
 	</body>

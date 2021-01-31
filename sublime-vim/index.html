@@ -1,63 +1,19 @@
 <!DOCTYPE html>
-	<!--[if lt IE 7 ]><html class="ie ie6" lang="en"> <![endif]-->
-	<!--[if IE 7 ]><html class="ie ie7" lang="en"> <![endif]-->
-	<!--[if IE 8 ]><html class="ie ie8" lang="en"> <![endif]-->
-	<!--[if (gte IE 9)|!(IE)]><!--><html lang="en"> <!--<![endif]-->
+<html lang="en">
 	<head>
-
-		<!-- Basic Page Needs ================================================== -->
 		<meta charset="utf-8">
 		<title></title>
 		<meta name="description" content="">
 		<meta name="author" content="">
 
-		<!-- Mobile Specific Metas ================================================== -->
 		<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 
-		<!-- CSS ================================================== -->
 		<link rel="stylesheet" href="../css/base.css">
 		<link rel="stylesheet" href="../css/skeleton.css">
 		<link rel="stylesheet" href="../css/layout.css">
 		<link href="../css/font-awesome/css/font-awesome.min.css" rel="stylesheet">
-
-		<!--[if lt IE 9]>
-			<script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
-		<![endif]-->
-
-		<!-- Favicons ================================================== -->
-		<link rel="shortcut icon" href="../images/favicon.ico">
-		<link rel="apple-touch-icon" href="../images/apple-touch-icon.png">
-		<link rel="apple-touch-icon" sizes="72x72" href="../images/apple-touch-icon-72x72.png">
-		<link rel="apple-touch-icon" sizes="114x114" href="../images/apple-touch-icon-114x114.png">
-
-		<script>
-			<!-- Callout macros -->
-			function formatCallouts() {
-				var tags = document.getElementsByTagName('p');
-				for (var i = 0; i < tags.length; i++) {
-					if (tags[i].innerHTML.startsWith('NOTE:')) {
-						tags[i].className = 'note';
-						tags[i].innerHTML = tags[i].innerHTML.replace('NOTE:', '<i class="fa fa-info-circle fa-3x" style="color: #1111BB; margin-right: 15px;"></i>');
-					} else if (tags[i].innerHTML.startsWith('WARNING:')) {
-						tags[i].className = 'warning';
-						tags[i].innerHTML = tags[i].innerHTML.replace('WARNING:', '<i class="fa fa-exclamation-triangle fa-3x" style="color: #BB1111; margin-right: 15px;"></i>');
-					} else if (tags[i].innerHTML.startsWith('IMPORTANT:')) {
-						tags[i].className = 'warning';
-						tags[i].innerHTML = tags[i].innerHTML.replace('IMPORTANT:', '<i class="fa fa-exclamation-circle fa-3x" style="color: #BB1111; margin-right: 15px;"></i>');
-					} else if (tags[i].innerHTML.startsWith('TIP:')) {
-						tags[i].className = 'tip';
-						tags[i].innerHTML = tags[i].innerHTML.replace('TIP:', '<i class="fa fa-lightbulb-o fa-3x" style="color: #248F24; margin-right: 15px;"></i>');
-					}
-				}
-			}
-		</script>
-
-		<!-- End Google Analytics -->
 	</head>
-	<body onload="formatCallouts()">
-		<!-- Primary Page Layout
-		================================================== -->
-
+	<body>
 		<div class="container">
 			<div class="twelve columns">
 				<div class="header">RobUpcraft(.com)</div>
@@ -76,35 +32,49 @@
 			</div>
 			
 			<div id="navBar" class="sixteen columns">
-				<!-- Links -->
 				<a href="/">Home</a> |
 				<a href="/projects">Projects</a> |
 				<a href="/blog">(b)log</a> |
-				<a href="/photos/">Photos</a>
+				<a href="/photos">Photos</a>
 			</div>
 
 			<div class="sixteen columns">
 				<h1>Give Vim a Sublime Facelift</h1>
 
-<!-- 6/28/2014 -->
+				<p>
+					I've started to use <a href="http://www.sublimetext.com">Sublime Text</a> at work and I have
+					to admit: I like it.  It's quick, extensible, and has a number of features that make editing
+					code a snap (everyones' favorite on the Internet appears to be Ctrl-D, but I personally can't
+					get enough of the "Fuzzy Find" feature.  It even supports "Vintage" mode - a feature that
+					allows a subset of Vim commands.  That said, I still find myself repeatedly returning to Vim
+					for a few reasons:
+				</p>
 
-<p>I've started to use <a href="http://www.sublimetext.com">Sublime Text</a> at work and I have to admit: I like it.  It's quick, extensible, and has a number of features that make editing code a snap (everyones' favorite on the Internet appears to be Ctrl-D, but I personally can't get enough of the "Fuzzy Find" feature.  It even supports "Vintage" mode - a feature that allows a subset of Vim commands.  That said, I still find myself repeatedly returning to Vim for a few reasons:</p>
+				<ul>
+					<li><strong>It's Expensive</strong> - As much as I like Sublime Text, it's not cheap.  As of this writing, a single user license will run you $70.</li>
+					<li><strong>Command Prompt Access</strong> - I find myself popping out to the command prompt...a lot.  Maybe I've been drinking too much of the "Command Line Kool-Aid", but there's something about constantly moving a mouse from my text editor to a separate command prompt window that really annoys me.  I'm not knocking Sublime's built-in build system integration - it's actually pretty awesome.  However, not everything can (or should) be mapped to a text editor's "Build" hotkey.</li>
+					<li><strong>Vintage Mode Isn't Vim</strong> - Again, this isn't really something that Sublime Text got wrong.  In truth, it's about as good as it could be.  However, because Vim is designed to operate in terminal environments, and because Sublime Text operates in a windowed environment with features inherent to that ecosystem, there's some overlap between the two worlds' keyboard commands, and only a subset of the Vim feature-set can realistically be supported.  I usually get confused and end up shooting myself in the foot when I try to use it, so I generally turn it off.</li>
+				</ul>
 
-<ul>
-<li><strong>It's Expensive</strong> - As much as I like Sublime Text, it's not cheap.  As of this writing, a single user license will run you $70.</li>
-<li><strong>Command Prompt Access</strong> - I find myself popping out to the command prompt...a lot.  Maybe I've been drinking too much of the "Command Line Kool-Aid", but there's something about constantly moving a mouse from my text editor to a separate command prompt window that really annoys me.  I'm not knocking Sublime's built-in build system integration - it's actually pretty awesome.  However, not everything can (or should) be mapped to a text editor's "Build" hotkey.</li>
-<li><strong>Vintage Mode Isn't Vim</strong> - Again, this isn't really something that Sublime Text got wrong.  In truth, it's about as good as it could be.  However, because Vim is designed to operate in terminal environments, and because Sublime Text operates in a windowed environment with features inherent to that ecosystem, there's some overlap between the two worlds' keyboard commands, and only a subset of the Vim feature-set can realistically be supported.  I usually get confused and end up shooting myself in the foot when I try to use it, so I generally turn it off.</li>
-</ul>
-
-<p>In its default state, Vim is pretty hideous and hard to use (no syntax highlighting, no automatic indenting, etc, etc).  With a few tweaks, however, it can actually be quite beautiful and even reminiscent of Sublime Text.</p>
-
-<h2>1. Install ctrlp.vim</h2>
-
-<p>This nifty little plugin adds a "fuzzy find" feature to your Vim install.  The download and installation instructions can be found, <a href="http://kien.github.io/ctrlp.vim">here</a>.  While you can choose where you would like to extract the plugin files on your own computer, this tutorial assumes that they are located in, <strong>~/.vim/bundle</strong>.</p>
-
-<h2>2. Update .vimrc</h2>
-
-<p>Add the following lines to your <strong>.vimrc</strong> file.  Note that this subset doesn't include configuration for other plugins and features, or account for your own personal preferences (eg. I like my tab space to be set to 4).</p>
+				<p>
+					In its default state, Vim is pretty hideous and hard to use (no syntax highlighting, no
+					automatic indenting, etc, etc).  With a few tweaks, however, it can actually be quite
+					beautiful and even reminiscent of Sublime Text.
+				</p>
+				<h2>1. Install ctrlp.vim</h2>
+				<p>
+					This nifty little plugin adds a "fuzzy find" feature to your Vim install.  The download
+					and installation instructions can be found,
+					<a href="http://kien.github.io/ctrlp.vim">here</a>.  While you can choose where you would
+					like to extract the plugin files on your own computer, this tutorial assumes that they are
+					located in, <strong>~/.vim/bundle</strong>.
+				</p>
+				<h2>2. Update .vimrc</h2>
+				<p>
+					Add the following lines to your <strong>.vimrc</strong> file.  Note that this subset doesn't
+					include configuration for other plugins and features, or account for your own personal
+					preferences (eg. I like my tab space to be set to 4).
+				</p>
 
 <pre><code>set ai
 set ts=4
@@ -117,22 +87,25 @@ filetype plugin indent on
 syntax on
 </code></pre>
 
-<h2>3. Update the Terminal Theme (Mac OS X only)</h2>
+				<h2>3. Update the Terminal Theme (Mac OS X only)</h2>
+				<ol>
+					<li>Download the <a href="https://github.com/stephenway/monokai.terminal">Monokai.terminal</a> color scheme.</li>
+					<li>Double-click on the Monokai.terminal file.  An OS X terminal window will be opened.</li>
+					<li>Under <strong>Terminal</strong> > <strong>Preferences</strong>, select the <em>Monokai</em> profile, and set it as the default.</li>
+				</ol>
 
-<ol>
-<li>Download the <a href="https://github.com/stephenway/monokai.terminal">Monokai.terminal</a> color scheme.</li>
-<li>Double-click on the Monokai.terminal file.  An OS X terminal window will be opened.</li>
-<li>Under <strong>Terminal</strong> > <strong>Preferences</strong>, select the <em>Monokai</em> profile, and set it as the default.</li>
-</ol>
+				<p>
+					If all goes well, source files opened with Vim from the terminal should look very
+					Sublime Text-esque:
+				</p>
 
-<p>If all goes well, source files opened with Vim from the terminal should look very Sublime Text-esque:</p>
-
-<p><img src="source.png" alt="Source Code" title=""></p>
-
-<p>And with the <strong>ctrlp</strong> plugin, finding files in and under your current directory is a snap:</p>
-
-<p><img src="fuzzy.png" alt="Fuzzy Find" title=""></p>
-
+				<p><img src="source.png" alt="Source Code" title=""></p>
+				<p>
+					And with the <strong>ctrlp</strong> plugin, finding files in and under your
+					current directory is a snap:
+				</p>
+				
+				<p><img src="fuzzy.png" alt="Fuzzy Find" title=""></p>
 			</div>
 		</div>
 	</body>

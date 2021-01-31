@@ -1,63 +1,19 @@
 <!DOCTYPE html>
-	<!--[if lt IE 7 ]><html class="ie ie6" lang="en"> <![endif]-->
-	<!--[if IE 7 ]><html class="ie ie7" lang="en"> <![endif]-->
-	<!--[if IE 8 ]><html class="ie ie8" lang="en"> <![endif]-->
-	<!--[if (gte IE 9)|!(IE)]><!--><html lang="en"> <!--<![endif]-->
+<html lang="en">
 	<head>
-
-		<!-- Basic Page Needs ================================================== -->
 		<meta charset="utf-8">
 		<title></title>
 		<meta name="description" content="">
 		<meta name="author" content="">
 
-		<!-- Mobile Specific Metas ================================================== -->
 		<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 
-		<!-- CSS ================================================== -->
 		<link rel="stylesheet" href="../css/base.css">
 		<link rel="stylesheet" href="../css/skeleton.css">
 		<link rel="stylesheet" href="../css/layout.css">
 		<link href="../css/font-awesome/css/font-awesome.min.css" rel="stylesheet">
-
-		<!--[if lt IE 9]>
-			<script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
-		<![endif]-->
-
-		<!-- Favicons ================================================== -->
-		<link rel="shortcut icon" href="../images/favicon.ico">
-		<link rel="apple-touch-icon" href="../images/apple-touch-icon.png">
-		<link rel="apple-touch-icon" sizes="72x72" href="../images/apple-touch-icon-72x72.png">
-		<link rel="apple-touch-icon" sizes="114x114" href="../images/apple-touch-icon-114x114.png">
-
-		<script>
-			<!-- Callout macros -->
-			function formatCallouts() {
-				var tags = document.getElementsByTagName('p');
-				for (var i = 0; i < tags.length; i++) {
-					if (tags[i].innerHTML.startsWith('NOTE:')) {
-						tags[i].className = 'note';
-						tags[i].innerHTML = tags[i].innerHTML.replace('NOTE:', '<i class="fa fa-info-circle fa-3x" style="color: #1111BB; margin-right: 15px;"></i>');
-					} else if (tags[i].innerHTML.startsWith('WARNING:')) {
-						tags[i].className = 'warning';
-						tags[i].innerHTML = tags[i].innerHTML.replace('WARNING:', '<i class="fa fa-exclamation-triangle fa-3x" style="color: #BB1111; margin-right: 15px;"></i>');
-					} else if (tags[i].innerHTML.startsWith('IMPORTANT:')) {
-						tags[i].className = 'warning';
-						tags[i].innerHTML = tags[i].innerHTML.replace('IMPORTANT:', '<i class="fa fa-exclamation-circle fa-3x" style="color: #BB1111; margin-right: 15px;"></i>');
-					} else if (tags[i].innerHTML.startsWith('TIP:')) {
-						tags[i].className = 'tip';
-						tags[i].innerHTML = tags[i].innerHTML.replace('TIP:', '<i class="fa fa-lightbulb-o fa-3x" style="color: #248F24; margin-right: 15px;"></i>');
-					}
-				}
-			}
-		</script>
-
-		<!-- End Google Analytics -->
 	</head>
-	<body onload="formatCallouts()">
-		<!-- Primary Page Layout
-		================================================== -->
-
+	<body>
 		<div class="container">
 			<div class="twelve columns">
 				<div class="header">RobUpcraft(.com)</div>
@@ -76,48 +32,55 @@
 			</div>
 			
 			<div id="navBar" class="sixteen columns">
-				<!-- Links -->
 				<a href="/">Home</a> |
 				<a href="/projects">Projects</a> |
 				<a href="/blog">(b)log</a> |
-				<a href="/photos/">Photos</a>
+				<a href="/photos">Photos</a>
 			</div>
 
 			<div class="sixteen columns">
 				<h1>Projects</h1>
-
-<p>Listed below are some of the projects that I have either been involved with or am currently working on.</p>
-
-<h2>fsq</h2>
-
-<p><a href="https://bintray.com/upcrob/generic/fsq/_latestVersion#files"><img src="https://api.bintray.com/packages/upcrob/generic/fsq/images/download.svg" alt="Download" title=""></a></p>
-
-<p><a href="https://github.com/upcrob/fsq">fsq</a> is a small, simple utility for querying the file system.  I have frequently needed to find files that match a certain set of criteria (e.g. size has to be 100 kilobytes, filename endswith '.java', the file contains a certain set of keywords, etc).  While this can be done to some extent with existing *nix tools or by writing a script, looking up the specific flags or even writing a quick script can be a pain, especially when optimization comes into play (e.g. don't read the file if you don't have to).  The fsq utility does all of this and more with a small SQL-like language.  Plus I'm a bit of a parser nut, so it gives me an outlet for that.</p>
-
-<h2>jOTP</h2>
-
-<p><a href="https://bintray.com/upcrob/generic/jOTP/_latestVersion#files"><img src="https://api.bintray.com/packages/upcrob/generic/jOTP/images/download.svg" alt="Download" title=""></a></p>
-
-<p><a href="https://www.owasp.org/index.php/OWASP_JOTP_Project">jOTP</a> is a lightweight web application, implemented as a set of RESTful services, for generating and validating one-time passwords as a secondary factor of authentication.  This allows web applications to validate that users are who they say they are not only based on what they know (ie. their passwords), but also by something that they have (access to a particular cell phone or email account).</p>
-
-<h2>U Programming Language &amp; Compiler</h2>
-
-<p>One of my interests in the field of computer science is programming language and compiler design.  For this reason, I have designed an implemented a small programming language named (perhaps a bit pretentiously), "U".  It's not a terribly practical language, and I wrote it primarily out of curiosity.  That said, given its size, it could potentially be used as a teaching tool for those wishing to learn what goes into a compiler.</p>
-
-<ul>
-<li>The source code can be downloaded, <a href="https://github.com/upcrob/u-programming-language">here</a>.</li>
-<li>In order to compile the source, you'll need a C compiler (I use GCC) as well as <a href="http://dinosaur.compilertools.net">Flex and Bison</a>.</li>
-</ul>
-
-<h2>"Garry" - A Simple Chess AI</h2>
-
-<p>When I was an undergraduate student, I completed a senior project that involved creating a simple chess program. I originally wrote the program to run on a personal computer, and later parallelized it to run on the Math and Computer Science department's supercomputing cluster using MPI.  While my implementation is certainly not the most clever or cleanly coded (I would make a number of different design choices were I to rewrite the program from scratch), it was definitely a good experience to have.  I've included the source code and my (very brief) technical report for anyone who may happen to be interested in the topic.</p>
-
-<ul>
-<li><a href="ChessPaper.pdf">Overview</a></li>
-<li><a href="https://github.com/upcrob/garry">Source Code</a></li>
-</ul>
-
+				<p>Listed below are some of the projects that I have either been involved with or am currently working on.</p>
+				
+				<h2>fsq</h2>
+				<p>
+					<a href="https://github.com/upcrob/fsq">fsq</a> is a small, simple utility for querying the file system.  I have frequently needed to find files that match
+					a certain set of criteria (e.g. size has to be 100 kilobytes, filename endswith '.java', the file contains a certain set of keywords, etc).  While this can
+					be done to some extent with existing *nix tools or by writing a script, looking up the specific flags or even writing a quick script can be a pain,
+					especially when optimization comes into play (e.g. don't read the file if you don't have to).  The fsq utility does all of this and more with a small SQL-like
+					language.  Plus I'm a bit of a parser nut, so it gives me an outlet for that.
+				</p>
+				
+				<h2>jOTP</h2>
+				<p>
+					<a href="https://www.owasp.org/index.php/OWASP_JOTP_Project">jOTP</a> is a lightweight web application, implemented as a set of RESTful services, for
+					generating and validating one-time passwords as a secondary factor of authentication.  This allows web applications to validate that users are who they say
+					they are not only based on what they know (ie. their passwords), but also by something that they have (access to a particular cell phone or email account).
+				</p>
+				
+				<h2>U Programming Language &amp; Compiler</h2>
+				<p>
+					One of my interests in the field of computer science is programming language and compiler design.  For this reason, I have designed an implemented a small
+					programming language named (perhaps a bit pretentiously), "U".  It's not a terribly practical language, and I wrote it primarily out of curiosity.  That
+					said, given its size, it could potentially be used as a teaching tool for those wishing to learn what goes into a compiler.
+				</p>
+				<ul>
+					<li>The source code can be downloaded, <a href="https://github.com/upcrob/u-programming-language">here</a>.</li>
+					<li>In order to compile the source, you'll need a C compiler (I use GCC) as well as <a href="http://dinosaur.compilertools.net">Flex and Bison</a>.</li>
+				</ul>
+				
+				<h2>"Garry" - A Simple Chess AI</h2>	
+				<p>
+					When I was an undergraduate student, I completed a senior project that involved creating a simple chess program. I originally wrote the program to run
+					on a personal computer, and later parallelized it to run on the Math and Computer Science department's supercomputing cluster using MPI.  While my
+					implementation is certainly not the most clever or cleanly coded (I would make a number of different design choices were I to rewrite the program from
+					scratch), it was definitely a good experience to have.  I've included the source code and my (very brief) technical report for anyone who may happen to
+					be interested in the topic.
+				</p>
+				<ul>
+					<li><a href="ChessPaper.pdf">Overview</a></li>
+					<li><a href="https://github.com/upcrob/garry">Source Code</a></li>
+				</ul>
 			</div>
 		</div>
 	</body>

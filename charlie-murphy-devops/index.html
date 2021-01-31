@@ -1,63 +1,19 @@
 <!DOCTYPE html>
-	<!--[if lt IE 7 ]><html class="ie ie6" lang="en"> <![endif]-->
-	<!--[if IE 7 ]><html class="ie ie7" lang="en"> <![endif]-->
-	<!--[if IE 8 ]><html class="ie ie8" lang="en"> <![endif]-->
-	<!--[if (gte IE 9)|!(IE)]><!--><html lang="en"> <!--<![endif]-->
+<html lang="en">
 	<head>
-
-		<!-- Basic Page Needs ================================================== -->
 		<meta charset="utf-8">
 		<title></title>
 		<meta name="description" content="">
 		<meta name="author" content="">
 
-		<!-- Mobile Specific Metas ================================================== -->
 		<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 
-		<!-- CSS ================================================== -->
 		<link rel="stylesheet" href="../css/base.css">
 		<link rel="stylesheet" href="../css/skeleton.css">
 		<link rel="stylesheet" href="../css/layout.css">
 		<link href="../css/font-awesome/css/font-awesome.min.css" rel="stylesheet">
-
-		<!--[if lt IE 9]>
-			<script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
-		<![endif]-->
-
-		<!-- Favicons ================================================== -->
-		<link rel="shortcut icon" href="../images/favicon.ico">
-		<link rel="apple-touch-icon" href="../images/apple-touch-icon.png">
-		<link rel="apple-touch-icon" sizes="72x72" href="../images/apple-touch-icon-72x72.png">
-		<link rel="apple-touch-icon" sizes="114x114" href="../images/apple-touch-icon-114x114.png">
-
-		<script>
-			<!-- Callout macros -->
-			function formatCallouts() {
-				var tags = document.getElementsByTagName('p');
-				for (var i = 0; i < tags.length; i++) {
-					if (tags[i].innerHTML.startsWith('NOTE:')) {
-						tags[i].className = 'note';
-						tags[i].innerHTML = tags[i].innerHTML.replace('NOTE:', '<i class="fa fa-info-circle fa-3x" style="color: #1111BB; margin-right: 15px;"></i>');
-					} else if (tags[i].innerHTML.startsWith('WARNING:')) {
-						tags[i].className = 'warning';
-						tags[i].innerHTML = tags[i].innerHTML.replace('WARNING:', '<i class="fa fa-exclamation-triangle fa-3x" style="color: #BB1111; margin-right: 15px;"></i>');
-					} else if (tags[i].innerHTML.startsWith('IMPORTANT:')) {
-						tags[i].className = 'warning';
-						tags[i].innerHTML = tags[i].innerHTML.replace('IMPORTANT:', '<i class="fa fa-exclamation-circle fa-3x" style="color: #BB1111; margin-right: 15px;"></i>');
-					} else if (tags[i].innerHTML.startsWith('TIP:')) {
-						tags[i].className = 'tip';
-						tags[i].innerHTML = tags[i].innerHTML.replace('TIP:', '<i class="fa fa-lightbulb-o fa-3x" style="color: #248F24; margin-right: 15px;"></i>');
-					}
-				}
-			}
-		</script>
-
-		<!-- End Google Analytics -->
 	</head>
-	<body onload="formatCallouts()">
-		<!-- Primary Page Layout
-		================================================== -->
-
+	<body>
 		<div class="container">
 			<div class="twelve columns">
 				<div class="header">RobUpcraft(.com)</div>
@@ -76,50 +32,46 @@
 			</div>
 			
 			<div id="navBar" class="sixteen columns">
-				<!-- Links -->
 				<a href="/">Home</a> |
 				<a href="/projects">Projects</a> |
 				<a href="/blog">(b)log</a> |
-				<a href="/photos/">Photos</a>
+				<a href="/photos">Photos</a>
 			</div>
 
 			<div class="sixteen columns">
 				<h1>Charlie Murphy's True DevOps Stories</h1>
 
-<!-- 4/20/2019 -->
-
-<p>I've come to notice a pattern in DevOps tools and their adoption.  First, they start by beckoning to you from across the room during a demo session at your local conference.</p>
-
-<p><img src="seduction.gif" alt="Jenkins.  Beckoning seductively to you." title=""></p>
-
-<p>Inspired, you go ahead and install it at your organization.  After all, everything looked so easy and revolutionary in the demo.</p>
-
-<p><img src="punch.gif" alt="A tool, punching you in the face." title=""></p>
-
-<p>But wait - nothing but the most simple use case is working right!  The documentation doesn't say anything about this error you're seeing in the logs (frankly, it doesn't say much at all).  And what are all these files that suddenly appeared in <em>/var/lib</em>?</p>
-
-<p>Still you see all of your friends (and the rest of the Internet) are praising it, so they can't all be wrong...right?</p>
-
-<p><img src="celebration.gif" alt="It's a celebration!" title=""></p>
-
-<p>So you press on.  You even feel a bit accomplished after 8 hours of Saturday patching heroics to fix a trashed node.  It's time to write a blog post to demonstrate your expertise.</p>
-
-<p><img src="heroics.gif" alt="Heroics" title=""></p>
-
-<p>But the sensation doesn't last.  Day after day, patch after patch, the failed RPM installations begin to wear on you.  Regrettably, your once new infrastructure has made itself at home in your environment.</p>
-
-<p><img src="couch.gif" alt="Jenkins, messing up your couch." title=""></p>
-
-<p>Months pass.  You've reigned in most of the extra complexity from the distributed terror you've wrought upon the world, and have since moved on to the next shiny tool.  Maintenance is something other people do, anyway.</p>
-
-<p>Still, networks and hardware do fail from time to time and when they do, your creation reasserts its independence.</p>
-
-<p><img src="slap.gif" alt="Slap." title=""></p>
-
-<p>In conclusion:</p>
-
-<p><img src="devops.png" alt="DevOps is a hell of a drug." title=""></p>
-
+				<p>
+					I've come to notice a pattern in DevOps tools and their adoption.  First, they start by beckoning to you from across the room during a demo session
+					at your local conference.
+				</p>
+				<p><img src="seduction.gif" alt="Jenkins.  Beckoning seductively to you." title=""></p>
+				<p>Inspired, you go ahead and install it at your organization.  After all, everything looked so easy and revolutionary in the demo.</p>
+				<p><img src="punch.gif" alt="A tool, punching you in the face." title=""></p>
+				<p>
+					But wait - nothing but the most simple use case is working right!  The documentation doesn't say anything about this error you're seeing in the logs
+					(frankly, it doesn't say much at all).  And what are all these files that suddenly appeared in <em>/var/lib</em>?
+				</p>
+				<p>Still you see all of your friends (and the rest of the Internet) are praising it, so they can't all be wrong...right?</p>
+				<p><img src="celebration.gif" alt="It's a celebration!" title=""></p>
+				<p>
+					So you press on.  You even feel a bit accomplished after 8 hours of Saturday patching heroics to fix a trashed node.  It's time to write a blog post
+					to demonstrate your expertise.
+				</p>
+				<p><img src="heroics.gif" alt="Heroics" title=""></p>
+				<p>
+					But the sensation doesn't last.  Day after day, patch after patch, the failed RPM installations begin to wear on you.  Regrettably, your once new
+					infrastructure has made itself at home in your environment.
+				</p>
+				<p><img src="couch.gif" alt="Jenkins, messing up your couch." title=""></p>
+				<p>
+					Months pass.  You've reigned in most of the extra complexity from the distributed terror you've wrought upon the world, and have since moved on to
+					the next shiny tool.  Maintenance is something other people do, anyway.
+				</p>
+				<p>Still, networks and hardware do fail from time to time and when they do, your creation reasserts its independence.</p>
+				<p><img src="slap.gif" alt="Slap." title=""></p>
+				<p>In conclusion:</p>
+				<p><img src="devops.png" alt="DevOps is a hell of a drug." title=""></p>
 			</div>
 		</div>
 	</body>

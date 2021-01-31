@@ -1,63 +1,19 @@
 <!DOCTYPE html>
-	<!--[if lt IE 7 ]><html class="ie ie6" lang="en"> <![endif]-->
-	<!--[if IE 7 ]><html class="ie ie7" lang="en"> <![endif]-->
-	<!--[if IE 8 ]><html class="ie ie8" lang="en"> <![endif]-->
-	<!--[if (gte IE 9)|!(IE)]><!--><html lang="en"> <!--<![endif]-->
+<html lang="en">
 	<head>
-
-		<!-- Basic Page Needs ================================================== -->
 		<meta charset="utf-8">
 		<title></title>
 		<meta name="description" content="">
 		<meta name="author" content="">
 
-		<!-- Mobile Specific Metas ================================================== -->
 		<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 
-		<!-- CSS ================================================== -->
 		<link rel="stylesheet" href="../css/base.css">
 		<link rel="stylesheet" href="../css/skeleton.css">
 		<link rel="stylesheet" href="../css/layout.css">
 		<link href="../css/font-awesome/css/font-awesome.min.css" rel="stylesheet">
-
-		<!--[if lt IE 9]>
-			<script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
-		<![endif]-->
-
-		<!-- Favicons ================================================== -->
-		<link rel="shortcut icon" href="../images/favicon.ico">
-		<link rel="apple-touch-icon" href="../images/apple-touch-icon.png">
-		<link rel="apple-touch-icon" sizes="72x72" href="../images/apple-touch-icon-72x72.png">
-		<link rel="apple-touch-icon" sizes="114x114" href="../images/apple-touch-icon-114x114.png">
-
-		<script>
-			<!-- Callout macros -->
-			function formatCallouts() {
-				var tags = document.getElementsByTagName('p');
-				for (var i = 0; i < tags.length; i++) {
-					if (tags[i].innerHTML.startsWith('NOTE:')) {
-						tags[i].className = 'note';
-						tags[i].innerHTML = tags[i].innerHTML.replace('NOTE:', '<i class="fa fa-info-circle fa-3x" style="color: #1111BB; margin-right: 15px;"></i>');
-					} else if (tags[i].innerHTML.startsWith('WARNING:')) {
-						tags[i].className = 'warning';
-						tags[i].innerHTML = tags[i].innerHTML.replace('WARNING:', '<i class="fa fa-exclamation-triangle fa-3x" style="color: #BB1111; margin-right: 15px;"></i>');
-					} else if (tags[i].innerHTML.startsWith('IMPORTANT:')) {
-						tags[i].className = 'warning';
-						tags[i].innerHTML = tags[i].innerHTML.replace('IMPORTANT:', '<i class="fa fa-exclamation-circle fa-3x" style="color: #BB1111; margin-right: 15px;"></i>');
-					} else if (tags[i].innerHTML.startsWith('TIP:')) {
-						tags[i].className = 'tip';
-						tags[i].innerHTML = tags[i].innerHTML.replace('TIP:', '<i class="fa fa-lightbulb-o fa-3x" style="color: #248F24; margin-right: 15px;"></i>');
-					}
-				}
-			}
-		</script>
-
-		<!-- End Google Analytics -->
 	</head>
-	<body onload="formatCallouts()">
-		<!-- Primary Page Layout
-		================================================== -->
-
+	<body>
 		<div class="container">
 			<div class="twelve columns">
 				<div class="header">RobUpcraft(.com)</div>
@@ -76,33 +32,33 @@
 			</div>
 			
 			<div id="navBar" class="sixteen columns">
-				<!-- Links -->
 				<a href="/">Home</a> |
 				<a href="/projects">Projects</a> |
 				<a href="/blog">(b)log</a> |
-				<a href="/photos/">Photos</a>
+				<a href="/photos">Photos</a>
 			</div>
 
 			<div class="sixteen columns">
 				<h1>(b)log</h1>
 
-<blockquote>
-  <p>"Never before have so many people, with so little to say, said so much, to so few."
-| <a href="http://www.despair.com/blogging.html">despair.com</a></p>
-</blockquote>
+				<blockquote>
+					<p>
+						"Never before have so many people, with so little to say, said so much, to so few." |
+						<a href="http://www.despair.com/blogging.html">despair.com</a>
+					</p>
+				</blockquote>
 
-<ul>
-<li><a href="/charlie-murphy-devops">Charlie Murphy's True DevOps Stories</a></li>
-<li><a href="/install-bison-mac">Installing GNU Bison on a Mac</a></li>
-<li><a href="/unit-testing-with-derby">Unit Testing with Derby</a></li>
-<li><a href="/sublime-vim">Give Vim a Sublime Facelift</a></li>
-<li><a href="/jotp-tutorial">OWASP jOTP Tutorial</a></li>
-<li><a href="/jotp-overview">OWASP jOTP Overview</a></li>
-<li><a href="/tomcat-valves">Writing a Custom Error Report Valve for Tomcat</a></li>
-<li><a href="/why-redis-is-awesome">Why Redis is Awesome</a></li>
-<li><a href="/persistence-of-php">The Persistence of PHP: Why I Can't Help But Love It</a></li>
-</ul>
-
+				<ul>
+					<li><a href="/charlie-murphy-devops">04/20/2019 - Charlie Murphy's True DevOps Stories</a></li>
+					<li><a href="/install-bison-mac">11/21/2015 - Installing GNU Bison on a Mac</a></li>
+					<li><a href="/unit-testing-with-derby">02/03/2015 - Unit Testing with Derby</a></li>
+					<li><a href="/sublime-vim">06/28/2014 - Give Vim a Sublime Facelift</a></li>
+					<li><a href="/jotp-tutorial">03/20/2014 - OWASP jOTP Tutorial</a></li>
+					<li><a href="/jotp-overview">03/20/2014 - OWASP jOTP Overview</a></li>
+					<li><a href="/why-redis-is-awesome">02/20/2014 - Why Redis is Awesome</a></li>
+					<li><a href="/tomcat-valves">02/15/2014 - Writing a Custom Error Report Valve for Tomcat</a></li>
+					<li><a href="/persistence-of-php">02/12/2014 - The Persistence of PHP: Why I Can't Help But Love It</a></li>
+				</ul>
 			</div>
 		</div>
 	</body>

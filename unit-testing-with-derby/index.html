@@ -1,63 +1,19 @@
 <!DOCTYPE html>
-	<!--[if lt IE 7 ]><html class="ie ie6" lang="en"> <![endif]-->
-	<!--[if IE 7 ]><html class="ie ie7" lang="en"> <![endif]-->
-	<!--[if IE 8 ]><html class="ie ie8" lang="en"> <![endif]-->
-	<!--[if (gte IE 9)|!(IE)]><!--><html lang="en"> <!--<![endif]-->
+<html lang="en">
 	<head>
-
-		<!-- Basic Page Needs ================================================== -->
 		<meta charset="utf-8">
 		<title></title>
 		<meta name="description" content="">
 		<meta name="author" content="">
 
-		<!-- Mobile Specific Metas ================================================== -->
 		<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 
-		<!-- CSS ================================================== -->
 		<link rel="stylesheet" href="../css/base.css">
 		<link rel="stylesheet" href="../css/skeleton.css">
 		<link rel="stylesheet" href="../css/layout.css">
 		<link href="../css/font-awesome/css/font-awesome.min.css" rel="stylesheet">
-
-		<!--[if lt IE 9]>
-			<script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
-		<![endif]-->
-
-		<!-- Favicons ================================================== -->
-		<link rel="shortcut icon" href="../images/favicon.ico">
-		<link rel="apple-touch-icon" href="../images/apple-touch-icon.png">
-		<link rel="apple-touch-icon" sizes="72x72" href="../images/apple-touch-icon-72x72.png">
-		<link rel="apple-touch-icon" sizes="114x114" href="../images/apple-touch-icon-114x114.png">
-
-		<script>
-			<!-- Callout macros -->
-			function formatCallouts() {
-				var tags = document.getElementsByTagName('p');
-				for (var i = 0; i < tags.length; i++) {
-					if (tags[i].innerHTML.startsWith('NOTE:')) {
-						tags[i].className = 'note';
-						tags[i].innerHTML = tags[i].innerHTML.replace('NOTE:', '<i class="fa fa-info-circle fa-3x" style="color: #1111BB; margin-right: 15px;"></i>');
-					} else if (tags[i].innerHTML.startsWith('WARNING:')) {
-						tags[i].className = 'warning';
-						tags[i].innerHTML = tags[i].innerHTML.replace('WARNING:', '<i class="fa fa-exclamation-triangle fa-3x" style="color: #BB1111; margin-right: 15px;"></i>');
-					} else if (tags[i].innerHTML.startsWith('IMPORTANT:')) {
-						tags[i].className = 'warning';
-						tags[i].innerHTML = tags[i].innerHTML.replace('IMPORTANT:', '<i class="fa fa-exclamation-circle fa-3x" style="color: #BB1111; margin-right: 15px;"></i>');
-					} else if (tags[i].innerHTML.startsWith('TIP:')) {
-						tags[i].className = 'tip';
-						tags[i].innerHTML = tags[i].innerHTML.replace('TIP:', '<i class="fa fa-lightbulb-o fa-3x" style="color: #248F24; margin-right: 15px;"></i>');
-					}
-				}
-			}
-		</script>
-
-		<!-- End Google Analytics -->
 	</head>
-	<body onload="formatCallouts()">
-		<!-- Primary Page Layout
-		================================================== -->
-
+	<body>
 		<div class="container">
 			<div class="twelve columns">
 				<div class="header">RobUpcraft(.com)</div>
@@ -76,23 +32,29 @@
 			</div>
 			
 			<div id="navBar" class="sixteen columns">
-				<!-- Links -->
 				<a href="/">Home</a> |
 				<a href="/projects">Projects</a> |
 				<a href="/blog">(b)log</a> |
-				<a href="/photos/">Photos</a>
+				<a href="/photos">Photos</a>
 			</div>
 
 			<div class="sixteen columns">
 				<h1>Using Derby as an In-Memory Data Source</h1>
 
-<!-- 2/3/2015 -->
+				<p>
+					While I'm a fan of using mock objects for unit and integration testing, there are times when they do not adequately mimic the functionality of an
+					underlying resource.  Often, this underlying resource is a relational database.  Creating relational databases that persist to disk during testing,
+					however, can be very inconvenient since test failures and filesystem differences can cause tests to behave erratically.  For this reason, quickly
+					creating, using, and destroying databases in memory is frequently a good solution to this problem.  In the Java world, Derby is a popular embedded
+					database that supports in-memory usage.
+				</p>
 
-<p>While I'm a fan of using mock objects for unit and integration testing, there are times when they do not adequately mimic the functionality of an underlying resource.  Often, this underlying resource is a relational database.  Creating relational databases that persist to disk during testing, however, can be very inconvenient since test failures and filesystem differences can cause tests to behave erratically.  For this reason, quickly creating, using, and destroying databases in memory is frequently a good solution to this problem.  In the Java world, Derby is a popular embedded database that supports in-memory usage.</p>
-
-<h2>Dependencies</h2>
-
-<p>To use embedded Derby in a Java project, you'll need to include <strong>derby.jar</strong> in your project.  If you're using <a href="http://www.gradle.org">Gradle</a>, the following dependency can be included in your build script (where <strong><VERSION></strong> is the derby version that you wish to use):</p>
+				<h2>Dependencies</h2>
+				<p>
+					To use embedded Derby in a Java project, you'll need to include <strong>derby.jar</strong> in your project.  If you're using
+					<a href="http://www.gradle.org">Gradle</a>, the following dependency can be included in your build script (where <strong><VERSION></strong> is the
+					derby version that you wish to use):
+				</p>
 
 <pre><code>repositories {
     mavenCentral()
@@ -103,17 +65,21 @@ dependencies {
 }
 </code></pre>
 
-<p>NOTE: In-memory derby was introduced in version 10.5.  Using versions released prior to this will not work.</p>
+				<p>NOTE: In-memory derby was introduced in version 10.5.  Using versions released prior to this will not work.</p>
 
-<h2>Plain JDBC</h2>
-
-<p>If you use plain JDBC, creating a connection is easy.  Simply create an instance of <strong>EmbeddedDriver</strong> and create a database connection on-the-fly.  In the following example, the database we are creating is names, <strong>MyDatabase</strong>:</p>
+				<h2>Plain JDBC</h2>
+				<p>If you use plain JDBC, creating a connection is easy.  Simply create an instance of <strong>EmbeddedDriver</strong> and create a database
+					connection on-the-fly.  In the following example, the database we are creating is names, <strong>MyDatabase</strong>:
+				</p>
 
 <pre><code>EmbeddedDriver driver = new EmbeddedDriver();
 Connection conn = driver.connect("jdbc:derby:memory:MyDatabase;create=true", new Properties());
 </code></pre>
 
-<p>Depending on the scenario, you may want to turn off Derby logging (by default, Derby writes log messages to a file called <strong>derby.log</strong>).  If this is the case, the output can be written to <strong>/dev/null</strong> (or <strong>NUL</strong> on Windows):</p>
+				<p>
+					Depending on the scenario, you may want to turn off Derby logging (by default, Derby writes log messages to a file called <strong>derby.log</strong>).
+					If this is the case, the output can be written to <strong>/dev/null</strong> (or <strong>NUL</strong> on Windows):
+				</p>
 
 <pre><code>if (System.getProperty("os.name").toLowerCase().contains("windows")) {
     System.setProperty("derby.stream.error.file", "NUL");
@@ -122,11 +88,19 @@ Connection conn = driver.connect("jdbc:derby:memory:MyDatabase;create=true", new
 }
 </code></pre>
 
-<p>WARNING: Doing this will turn off Derby logging for the entire JVM.  Don't use the above code in production systems or in cases where logging may be desirable!</p>
+				<p>
+					<strong>WARNING:</strong> Doing this will turn off Derby logging for the entire JVM.  Don't use the above code in production systems or in cases where logging may be
+					desirable!
+				</p>
 
-<h2>Using EmbeddedDatabaseBuilder</h2>
-
-<p>If you're using Spring, creating an embedded database is even easier.  As long as Derby is on the classpath, the <a href="http://docs.spring.io/spring/docs/current/javadoc-api/org/springframework/jdbc/datasource/embedded/EmbeddedDatabaseBuilder.html">EmbeddedDatabaseBuilder</a> allows you to create a database in memory in seconds.</p>
+				<h2>Using EmbeddedDatabaseBuilder</h2>
+				<p>
+					If you're using Spring, creating an embedded database is even easier.  As long as Derby is on the classpath, the
+					<a href="http://docs.spring.io/spring/docs/current/javadoc-api/org/springframework/jdbc/datasource/embedded/EmbeddedDatabaseBuilder.html">
+						EmbeddedDatabaseBuilder
+					</a>
+					allows you to create a database in memory in seconds.
+				</p>
 
 <pre><code>EmbeddedDatabaseBuilder builder = new EmbeddedDatabaseBuilder();
 EmbeddedDatabase db = builder.setType(EmbeddedDatabaseType.DERBY).addScript("my-setup-script.sql").build();
@@ -134,7 +108,6 @@ JdbcTemplate jdbc = new JdbcTemplate(db);
 // run tests against the database . . .
 db.shutdown();
 </code></pre>
-
 			</div>
 		</div>
 	</body>
